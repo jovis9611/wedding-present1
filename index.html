@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#120b24" />
+  <meta name="description" content="一封写给新人的薰衣草与宇宙婚礼祝福" />
+  <title>黄健航 &amp; 邱幸儿｜新婚快乐</title>
+  <link rel="stylesheet" href="style.css?v=8" />
+</head>
+<body>
+  <button id="musicToggle" class="music-toggle" type="button" aria-label="开启背景音乐" aria-pressed="false">♫ <span>开启音乐</span></button>
+  <canvas id="starCanvas" aria-hidden="true"></canvas>
+
+  <div id="cosmosStage" aria-hidden="true"></div>
+  <main id="app">
+    <!-- 1. 开场 -->
+    <section class="scene scene--hero is-active" id="scene-hero" aria-labelledby="hero-title">
+      <div class="ambient-glow ambient-glow--one"></div>
+      <div class="ambient-glow ambient-glow--two"></div>
+
+      <div class="lavender-field lavender-field--front" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="scene__content hero-card">
+        <p class="eyebrow">FOR <span data-couple>你们</span></p>
+        <h1 id="hero-title">在漫长的时间里，<br />有些相遇，像花期一样值得等待。</h1>
+        <p class="hero-subtitle">而有些人，一旦遇见，便让整个宇宙都有了方向。</p>
+        <button class="primary-btn" data-next="scene-letter-intro">开始这段旅程</button>
+      </div>
+
+      <p class="scroll-hint">点击开启 · 建议戴上耳机静静看完</p>
+    </section>
+
+    <!-- 2. 信件入口 -->
+    <section class="scene scene--letter" id="scene-letter-intro" aria-labelledby="letter-title">
+      <div class="scene__content letter-intro-wrap">
+        <p class="eyebrow">CHAPTER I · A LETTER</p>
+        <h2 id="letter-title">有些祝福，打在屏幕上好像太轻。</h2>
+        <p class="lead">所以，我们还是想把祝福尽量具体化，<br />用某种载体，把这份心意留下来。</p>
+
+        <button class="envelope" id="openEnvelope" aria-label="打开信封">
+          <span class="envelope__back"></span>
+          <span class="envelope__paper"></span>
+          <span class="envelope__front"></span>
+          <span class="envelope__flap"></span>
+          <span class="wax-seal">L</span>
+          <span class="lavender-sprig" aria-hidden="true">✦</span>
+        </button>
+
+        <p class="microcopy">点击信封</p>
+      </div>
+    </section>
+
+    <!-- 3. 我们的信 -->
+    <section class="scene scene--paper" id="scene-letter" aria-labelledby="handwritten-title">
+      <div class="paper-shell">
+        <div class="paper-tape paper-tape--left" aria-hidden="true"></div>
+        <div class="paper-tape paper-tape--right" aria-hidden="true"></div>
+
+        <div class="paper-card">
+          <div class="letter-heading"><p class="eyebrow eyebrow--ink">A letter from us</p><span class="letter-date">08 · 11 · 2026</span></div>
+          <svg class="letter-lavender" viewBox="0 0 100 160" aria-hidden="true"><g fill="none" stroke="#91839c" stroke-width="1.6" stroke-linecap="round"><path d="M51 147 Q38 94 31 35 M51 147 Q54 78 68 17 M51 147 Q70 111 83 75"/><path d="M42 104 Q22 97 25 83 Q38 88 42 104 M57 106 Q69 94 73 96"/></g><g fill="#ab8cc0" opacity=".85"><ellipse cx="28" cy="36" rx="5" ry="10" transform="rotate(-25 28 36)"/><ellipse cx="35" cy="50" rx="5" ry="10" transform="rotate(25 35 50)"/><ellipse cx="27" cy="63" rx="5" ry="10" transform="rotate(-35 27 63)"/><ellipse cx="39" cy="73" rx="5" ry="10" transform="rotate(20 39 73)"/><ellipse cx="68" cy="18" rx="5" ry="11" transform="rotate(15 68 18)"/><ellipse cx="60" cy="36" rx="5" ry="10" transform="rotate(-25 60 36)"/><ellipse cx="68" cy="47" rx="5" ry="10" transform="rotate(30 68 47)"/><ellipse cx="55" cy="59" rx="5" ry="10" transform="rotate(-25 55 59)"/><ellipse cx="62" cy="71" rx="5" ry="10" transform="rotate(25 62 71)"/><ellipse cx="84" cy="75" rx="4" ry="9" transform="rotate(30 84 75)"/><ellipse cx="76" cy="88" rx="4" ry="8" transform="rotate(-20 76 88)"/></g><path d="M40 127 Q54 121 63 128 M51 127 L44 143 M54 127 L65 139" fill="none" stroke="#b791a6" stroke-width="2"/></svg>
+          <h2 id="handwritten-title">给 <span data-couple>你们</span>：</h2>
+
+          <div class="typed-note wedding-letter">
+            <p class="letter-intro">听说11月8号是个好日子～ 💍✨</p>
+            <p>11，是两个人并肩站在一起；<br />8，是两个圆满的圈，紧紧相连。</p>
+            <p>原来最好的日子，不是因为黄历说它好，而是因为你们选择在这一天，<strong>从此把彼此写进了一辈子。</strong> ❤️</p>
+            <p>祝你们新婚快乐，幸福无限！♾️</p>
+            <p>诶！才发现这一天也刚好是 Sunday！☀️<br />星期日，也是属于你们的 <strong>Sun Day</strong> 🌻</p>
+            <p>愿从今天起，你们成为彼此生命里的小太阳，照亮往后的每一个平凡日子。☀️</p>
+            <p><strong>因为有彼此，所以每一天都是好日子。</strong> ❤️</p>
+            <p>期待见到最帅的新郎和最美的新娘！🤵🏻👰🏻‍♀️✨</p>
+            <p class="letter-ps"><strong>P.S.</strong> 这个网站虽然只有一周的期限，但我们的祝福和心意可是无限期的～ ♾️💌</p>
+          </div>
+
+          <button class="text-btn" data-next="scene-gift">还有一份礼物 →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 礼物盒 -->
+    <section class="scene scene--gift" id="scene-gift" aria-labelledby="gift-title">
+      <div class="scene__content gift-wrap">
+        <p class="eyebrow">CHAPTER II · A GIFT</p>
+        <h2 id="gift-title">有些礼物，不需要装进盒子里。</h2>
+        <p class="lead">把祝福种成一棵树，<br />树是假的，心意是真的。<br /><strong>至于枝头藏了什么，就等你们亲自揭晓啦。</strong> </p>
+
+        <button class="gift-box" id="giftBox" aria-label="打开礼物盒">
+          <span class="gift-box__lid"></span>
+          <span class="gift-box__bow gift-box__bow--left"></span>
+          <span class="gift-box__bow gift-box__bow--right"></span>
+          <span class="gift-box__ribbon"></span>
+          <span class="gift-box__base"></span>
+          <span class="gift-box__sparkles" aria-hidden="true">✦ ✧ ✦</span>
+        </button>
+
+        <p class="microcopy" id="giftHint">点击打开礼物盒</p>
+
+        <div id="blessingTree" class="blessing-tree" hidden>
+          <p class="tree-kicker">A LITTLE TREE OF WISHES</p>
+          <h3>一树祝福，慢慢拆开。</h3>
+          <p class="tree-instruction">点击树上的小礼物 · 顺序由你决定</p>
+          <div class="tree-stage"><img src="assets/blessing-tree.svg" alt="一棵挂满祝福礼物的薰衣草色树" /><button class="tree-gift" data-blessing="0" style="--x:24%;--y:47%;--delay:-0.0s" aria-label="打开第1份祝福：笔芯" aria-haspopup="dialog"><span class="tree-gift__ribbon" aria-hidden="true"></span><span class="tree-gift__box" aria-hidden="true">✦</span><span class="tree-gift__label">笔芯</span><span class="tree-gift__status">未打开</span></button><button class="tree-gift" data-blessing="1" style="--x:39%;--y:32%;--delay:-0.6s" aria-label="打开第2份祝福：惠恩" aria-haspopup="dialog"><span class="tree-gift__ribbon" aria-hidden="true"></span><span class="tree-gift__box" aria-hidden="true">✦</span><span class="tree-gift__label">惠恩</span><span class="tree-gift__status">未打开</span></button><button class="tree-gift" data-blessing="2" style="--x:57%;--y:27%;--delay:-1.2s" aria-label="打开第3份祝福：cc" aria-haspopup="dialog"><span class="tree-gift__ribbon" aria-hidden="true"></span><span class="tree-gift__box" aria-hidden="true">✦</span><span class="tree-gift__label">cc</span><span class="tree-gift__status">未打开</span></button><button class="tree-gift" data-blessing="3" style="--x:73%;--y:45%;--delay:-1.7999999999999998s" aria-label="打开第4份祝福：晓枫" aria-haspopup="dialog"><span class="tree-gift__ribbon" aria-hidden="true"></span><span class="tree-gift__box" aria-hidden="true">✦</span><span class="tree-gift__label">晓枫</span><span class="tree-gift__status">未打开</span></button><button class="tree-gift" data-blessing="4" style="--x:53%;--y:60%;--delay:-2.4s" aria-label="打开第5份祝福：小廖" aria-haspopup="dialog"><span class="tree-gift__ribbon" aria-hidden="true"></span><span class="tree-gift__box" aria-hidden="true">✦</span><span class="tree-gift__label">小廖</span><span class="tree-gift__status">未打开</span></button><div class="couple-dolls"><div class="doll-pair"><button class="doll doll--groom" data-doll="groom" aria-label="和新郎黄健航打招呼"><svg viewBox="0 0 120 170" aria-hidden="true"><path d="M30 96 Q16 113 24 145 L96 145 Q104 113 90 96" fill="#41354d"/><path d="M48 97 L60 128 L73 97" fill="#fff6ed"/><path d="M48 103 L60 108 L73 103 L73 117 L60 112 L48 117" fill="#b58bd0"/><path d="M37 142 L35 162 M83 142 L85 162" stroke="#352b41" stroke-width="15" stroke-linecap="round"/><path d="M24 61 Q19 15 60 17 Q103 15 98 64 L94 91 L24 91" fill="#3f2a32"/><ellipse cx="60" cy="65" rx="37" ry="38" fill="#ffe0cc"/><path d="M24 56 Q26 13 63 23 Q95 16 97 52 Q75 46 59 35 Q43 53 24 56" fill="#49303a"/><ellipse cx="38" cy="75" rx="9" ry="5" fill="#f5aeb6"/><ellipse cx="82" cy="75" rx="9" ry="5" fill="#f5aeb6"/><path d="M39 65 Q43 60 47 65 M73 65 Q77 60 81 65" fill="none" stroke="#503440" stroke-width="3" stroke-linecap="round"/><path d="M53 78 Q60 85 67 78" fill="none" stroke="#a36168" stroke-width="2.5" stroke-linecap="round"/><path d="M26 112 Q9 113 15 93" fill="none" stroke="#ffe0cc" stroke-width="10" stroke-linecap="round"/><circle cx="78" cy="118" r="6" fill="#c7a2df"/></svg></button><button class="doll doll--bride" data-doll="bride" aria-label="和新娘邱幸儿打招呼"><svg viewBox="0 0 120 170" aria-hidden="true"><path d="M21 83 Q3 139 9 155 L111 155 Q116 115 98 80" fill="#f7edff" opacity=".6"/><path d="M34 98 L14 156 Q60 172 106 156 L86 98" fill="#fff8ee"/><path d="M33 116 Q58 136 91 117" fill="none" stroke="#e4c4e7" stroke-width="3"/><path d="M24 61 Q19 15 60 17 Q103 15 98 64 L94 91 L24 91" fill="#3f2a32"/><ellipse cx="60" cy="65" rx="37" ry="38" fill="#ffe0cc"/><path d="M24 56 Q26 13 63 23 Q95 16 97 52 Q75 46 59 35 Q43 53 24 56" fill="#49303a"/><ellipse cx="38" cy="75" rx="9" ry="5" fill="#f5aeb6"/><ellipse cx="82" cy="75" rx="9" ry="5" fill="#f5aeb6"/><path d="M39 65 Q43 60 47 65 M73 65 Q77 60 81 65" fill="none" stroke="#503440" stroke-width="3" stroke-linecap="round"/><path d="M53 78 Q60 85 67 78" fill="none" stroke="#a36168" stroke-width="2.5" stroke-linecap="round"/><path d="M30 32 Q60 13 91 32" fill="none" stroke="#fef5e6" stroke-width="9"/><g fill="#c7a2df"><circle cx="36" cy="29" r="6"/><circle cx="59" cy="24" r="6"/><circle cx="82" cy="29" r="6"/></g><path d="M52 124 L67 146" stroke="#80a487" stroke-width="5"/><g fill="#bd92d0"><circle cx="48" cy="122" r="10"/><circle cx="64" cy="120" r="11"/><circle cx="57" cy="111" r="10"/></g></svg></button></div><p id="dollMessage" role="status">点点我们 ♡</p></div></div>
+          <p id="treeProgress" class="tree-progress" role="status">已打开 0 / 5 份祝福</p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="scene scene--mystery" id="scene-mystery" aria-labelledby="mysteryTitle">
+      <div class="mystery-sky" aria-hidden="true"></div><div class="shooting-star" aria-hidden="true"></div>
+      <div class="mystery-content">
+        <p class="eyebrow">A LITTLE SURPRISE</p>
+        <h2 id="mysteryTitle">恭喜你解锁神秘小礼物</h2>
+        <p id="mysteryCountdown" class="mystery-countdown" role="timer" aria-label="倒数8秒">8</p>
+        <p id="mysteryWait">抬头看看，礼物正在来的路上……</p>
+        <p id="mysteryQuestion" class="mystery-question" hidden>惊喜吗？</p>
+        <p id="mysteryPunchline" class="mystery-punchline" hidden>没有惊喜就是最大的惊喜。</p>
+        <button class="primary-btn" id="enterUniverse" hidden>去下一个礼物 →</button>
+      </div>
+    </section>
+
+    <!-- 5. 宇宙故事 -->
+    <section class="scene scene--universe" id="scene-universe" aria-labelledby="universe-title">
+      <div class="nebula nebula--one"></div>
+      <div class="nebula nebula--two"></div>
+      <div class="constellation constellation--left" aria-hidden="true"></div>
+      <div class="constellation constellation--right" aria-hidden="true"></div>
+
+      <div class="story-track">
+        <article class="story-beat story-beat--intro is-visible">
+          <p>有人说，薰衣草代表等待与守候。</p>
+    <button class="universe-scroll-hint" id="universeScrollHint" aria-label="向下滑动，或点击继续宇宙故事" aria-controls="scene-universe">
+      <span>向下滑动，继续故事</span>
+      <span class="universe-scroll-hint__arrow" aria-hidden="true">↓</span>
+    </button>
+        </article>
+        <article class="story-beat">
+          <p>可也许，等待真正珍贵的地方，<br />并不是等了多久。</p>
+        </article>
+        <article class="story-beat">
+          <p>而是在如此辽阔的世界里，<br />最后等到了彼此。</p>
+        </article>
+        <article class="story-beat">
+          <p>亿万颗星辰，各自沿着自己的轨迹运行。</p>
+        </article>
+        <article class="story-beat story-beat--orbits">
+          <div class="orbit-scene" aria-hidden="true">
+            <span class="orbit orbit--one"></span>
+            <span class="orbit orbit--two"></span>
+            <span class="star-person star-person--a"></span>
+            <span class="star-person star-person--b"></span>
+          </div>
+          <p>而在人海之中，<br />两个人也曾拥有完全不同的人生轨迹。</p>
+        </article>
+        <article class="story-beat">
+          <p>直到某一天，<br />两条轨迹相遇了。</p>
+        </article>
+        <article class="story-beat story-beat--big">
+          <p>从那一天开始，<br />世界没有变小。</p>
+          <p>只是这个巨大的宇宙里，<br /><strong>多了一个可以一起回去的地方。</strong></p>
+        </article>
+        <article class="story-beat story-beat--final" id="universe-title">
+          <p class="eyebrow">CHAPTER III · OUR UNIVERSE</p>
+          <h2>婚姻不是故事的结局。</h2>
+          <p>是两个独立的宇宙，决定从今天开始，共同书写时间。</p>
+        </article>
+      </div>
+
+      <button class="primary-btn universe-next" id="showFinale">走到故事的最后</button>
+    </section>
+
+    <!-- 6. 最终祝福 -->
+    <section class="scene scene--finale" id="scene-finale" aria-labelledby="finale-title">
+      <div class="finale-halo"></div>
+      <div class="finale-lavender" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="scene__content finale-card">
+        <p class="eyebrow">TO YOUR NEW BEGINNING</p>
+        <h2 id="finale-title">愿你们的爱情，</h2>
+        <p class="finale-copy">
+          像薰衣草一样温柔而长久，<br />
+          也像星辰一样，<br />
+          在漫长的时间里，始终照亮彼此。
+        </p>
+
+        <div class="couple-signature">
+          <strong data-couple>你们</strong>
+          <span data-date>2026 · Wedding Day</span>
+        </div>
+
+        <p class="final-line">新婚快乐。<br /><strong>属于你们的宇宙，才刚刚开始。</strong></p>
+
+        <button class="easter-star" id="easterStar" aria-label="隐藏彩蛋">✦</button>
+        <p class="easter-message" id="easterMessage">PS：以后吵架的时候，也要记得今天哦。🤍</p>
+
+        <button class="text-btn" id="restartBtn">重新看一次 ↺</button>
+      </div>
+    </section>
+
+  </main>
+  <dialog id="blessingDialog" class="blessing-dialog" aria-label="树上的祝福">
+    <button data-music-toggle class="dialog-music-toggle" type="button" aria-label="开启背景音乐" aria-pressed="false">♫ <span>开启音乐</span></button>
+    <button id="closeBlessing" class="dialog-close" aria-label="关闭祝福">×</button>
+    <p class="eyebrow">A WISH, JUST FOR YOU</p>
+        <div class="blessing-deck" id="blessingDeck" aria-live="polite">
+          <article class="blessing-card" data-friend="笔芯"><span class="blessing-card__index">FROM 笔芯</span><h3>来自笔芯的留言</h3><div class="friend-message friend-message--written"><p>对你俩印象最深的，还是 Ivy 当初说的，从吉打去 Penang，再从哪里去哪里……真的不知道为什么，莫名戳中我的笑点哈哈哈哈。还有你们两个「自然人」，都这么喜欢攀山涉水🤣</p><p>一转眼，竟然已经这么多年了！</p><p>终于啊啊啊！你们结婚了！！🎉</p><p>虽然说实话，在我眼里好像也没什么太大的变化。感觉你们早就习惯了彼此的存在，只不过现在多了一个正式的身份，顺便给「我们」这件事盖了个章。🤭</p><p>不过仔细想想，<strong>能把这么多年的「我们」，慢慢过成一辈子的「我们」，其实也是件挺浪漫的事。</strong></p><p>希望你们往后的日子也一样，不需要每天都发生什么惊天动地的大事，平平淡淡的生活里，也能找到很多莫名其妙的笑点。</p><p>偶尔斗斗嘴，一起到处跑，继续当你们的「自然人」。🌿</p><p><strong>接下来的路，就继续一起慢慢走、慢慢玩、慢慢变老吧。</strong></p><p>最后，恭喜两位「自然人」正式升级为「持证自然人组合」！</p><p>新婚快乐啦！🥂</p></div></article>
+          <article class="blessing-card" data-friend="惠恩"><span class="blessing-card__index">FROM 惠恩</span><h3>来自惠恩的留言</h3><p class="friend-message">留言待写</p></article>
+          <article class="blessing-card" data-friend="cc"><span class="blessing-card__index">FROM cc</span><h3>来自cc的留言</h3><p class="friend-message">留言待写</p></article>
+          <article class="blessing-card" data-friend="晓枫"><span class="blessing-card__index">FROM 晓枫</span><h3>来自晓枫的留言</h3><p class="friend-message">留言待写</p></article>
+          <article class="blessing-card" data-friend="小廖"><span class="blessing-card__index">FROM 小廖</span><h3>来自小廖的留言</h3><p class="friend-message">留言待写</p></article>
+        </div>
+    <button id="backToTree" class="primary-btn primary-btn--small">收好这份祝福，回到树下</button>
+  </dialog>
+
+  <script src="assets/vendor/three.js"></script>
+  <script src="cosmos.js?v=8"></script>
+  <script src="music-data.js?v=8"></script>
+  <script src="music.js?v=8"></script>
+  <script src="script.js?v=8"></script>
+</body>
+</html>
