@@ -89,6 +89,7 @@ function resetTree() {
   clearTimeout(giftTimer); giftTimer = null;
   if (blessingDialog.open) blessingDialog.close();
   openedGifts.clear(); revealedCards = 0;
+  pendingGift = null; riddlePanel.hidden = true; riddleAnswer.value = ""; riddleError.textContent = "";
   tree.hidden = true; giftBox.hidden = false; giftBox.disabled = false;
   giftBox.classList.remove("is-open");
   giftHint.hidden = false; giftHint.textContent = "点击打开礼物盒";
@@ -96,7 +97,7 @@ function resetTree() {
   document.getElementById("treeProgress").textContent = "已打开 0 / 5 份祝福";
   treeGifts.forEach((button, i) => {
     button.classList.remove("is-read");
-    button.querySelector(".tree-gift__status").textContent = "未打开";
+    button.querySelector(".tree-gift__status").textContent = RIDDLES[i] ? "待解锁 ♧" : "未打开";
     button.setAttribute("aria-label", `打开第${i + 1}份祝福：${button.querySelector(".tree-gift__label").textContent}`);
   });
   cards.forEach(card => card.classList.remove("is-revealed"));
@@ -114,17 +115,62 @@ giftBox.addEventListener("click", () => {
     treeGifts[0].focus({ preventScroll: true });
   }, 700);
 });
-treeGifts.forEach((button, i) => button.addEventListener("click", () => {
-  if (currentScene !== "scene-gift" || tree.hidden) return;
-  lastGift = button; openedGifts.add(i); revealedCards = openedGifts.size;
+const RIDDLES = {
+  0: {"name": "INFG", "question": "月老给新娘安排了一间「幸福婚姻办公室」，办公室门牌是四位数字。\n月老说：\n“门牌有四位数，第一位是最后一位的平方。”\n“中间两位数字相同。”\n“所有数字相加等于2。”\n“而且门牌号码倒过来读，还是同一个号码。”\n\n新娘问：“这是什么神仙办公室？连结婚都要考数学？”\n月老：“因为这间办公室，只收愿意相爱一辈子的夫妻。”\n\n问题：门牌号码是多少？", "answer": "1001"},
+  2: { name: "西伯利亚雪橇犬", question: "就是我们（cc，ivy，廖廖，cps，晓枫）的生日加起来的号码\n（只是月份和日期）", answer: "2886" },
+  3: { name: "FAM", question: "有个人出生在千禧年前四年，生日月份是最后一个季度的中间月份，日期是最小的奇质数。\n\n如果把出生月份、日期，以及出生年份的个位数依次排列，会得到什么四位密码？", answer: "1136" },
+  4: { name: "花生", question: "在这个庞大的坐标系里，\n我曾试图用微积分算尽宇宙的无限。\n直到遇见你，我才找到了“永远”的解——\n那是一个转身的距离，\n是一次横过来看像“B”的侧影，\n是再一次对视的心动，\n也是一场至死不渝的奔赴。", answer: "1314" }
+};
+const riddlePanel = document.getElementById("riddlePanel");
+const riddleAnswer = document.getElementById("riddleAnswer");
+const riddleError = document.getElementById("riddleError");
+const blessingDeck = document.getElementById("blessingDeck");
+const backToTree = document.getElementById("backToTree");
+let pendingGift = null;
+function showGiftMessage(i) {
+  const button = treeGifts[i];
+  openedGifts.add(i); revealedCards = openedGifts.size;
+  pendingGift = null;
+  riddlePanel.hidden = true; blessingDeck.hidden = false; backToTree.hidden = false;
   cards.forEach((card, index) => card.classList.toggle("is-revealed", index === i));
   button.classList.add("is-read");
   button.querySelector(".tree-gift__status").textContent = "已收好 ✓";
   button.setAttribute("aria-label", `重读第${i + 1}份祝福：${button.querySelector(".tree-gift__label").textContent}`);
+  blessingDialog.setAttribute("aria-label", `来自${button.querySelector(".tree-gift__label").textContent}的留言`);
   document.getElementById("treeProgress").textContent = `已打开 ${revealedCards} / ${cards.length} 份祝福`;
-
-  blessingDialog.showModal();
+  blessingDialog.scrollTop = 0;
+}
+treeGifts.forEach((button, i) => button.addEventListener("click", () => {
+  if (currentScene !== "scene-gift" || tree.hidden) return;
+  lastGift = button;
+  if (RIDDLES[i] && !openedGifts.has(i)) {
+    pendingGift = i;
+    cards.forEach(card => card.classList.remove("is-revealed"));
+    riddlePanel.hidden = false; blessingDeck.hidden = true; backToTree.hidden = true;
+    document.getElementById("riddleTitle").textContent = `来自${RIDDLES[i].name}的小谜题`;
+    document.getElementById("riddleText").textContent = RIDDLES[i].question;
+    riddleAnswer.value = ""; riddleAnswer.removeAttribute("aria-invalid"); riddleError.textContent = "";
+    blessingDialog.setAttribute("aria-label", `解锁${RIDDLES[i].name}的留言`);
+    blessingDialog.showModal(); blessingDialog.scrollTop = 0;
+    document.getElementById("riddleTitle").focus({ preventScroll: true });
+  } else {
+    showGiftMessage(i); blessingDialog.showModal(); blessingDialog.scrollTop = 0;
+  }
 }));
+document.getElementById("riddleForm").addEventListener("submit", event => {
+  event.preventDefault();
+  if (pendingGift === null || currentScene !== "scene-gift" || !blessingDialog.open) return;
+  const value = riddleAnswer.value.normalize("NFKC").trim();
+  if (value !== RIDDLES[pendingGift].answer) {
+    riddleError.textContent = /^\d{4}$/.test(value) ? "还差一点点，再想想看 ♡" : "请输入四位数字哦。";
+    riddleAnswer.setAttribute("aria-invalid", "true"); riddleAnswer.focus(); riddleAnswer.select(); return;
+  }
+  const solvedGift = pendingGift;
+  showGiftMessage(solvedGift);
+  const heading = cards[solvedGift].querySelector("h3");
+  heading.tabIndex = -1; heading.focus({ preventScroll: true });
+  blessingDialog.scrollTop = 0;
+});
 function closeBlessing() { blessingDialog.close(); }
 document.getElementById("closeBlessing").addEventListener("click", closeBlessing);
 document.getElementById("backToTree").addEventListener("click", closeBlessing);
@@ -292,3 +338,6 @@ function startMystery() {
   };
   update(); mysteryTimer = setInterval(update, 100);
 }
+
+// Initial labels match the replay state.
+treeGifts.forEach((button, i) => { if (RIDDLES[i]) button.querySelector(".tree-gift__status").textContent = "待解锁 ♧"; });
