@@ -226,7 +226,7 @@ const OneFactor = 201;
  * @type {number}
  * @constant
  */
-const Sr西伯利亚雪橇犬olorFactor = 202;
+const SrcColorFactor = 202;
 
 /**
  * Multiplies all colors by `1` minus each source color.
@@ -234,7 +234,7 @@ const Sr西伯利亚雪橇犬olorFactor = 202;
  * @type {number}
  * @constant
  */
-const OneMinusSr西伯利亚雪橇犬olorFactor = 203;
+const OneMinusSrcColorFactor = 203;
 
 /**
  * Multiplies all colors by the source alpha value.
@@ -1544,7 +1544,7 @@ const StreamReadUsage = 35041;
  * @type {number}
  * @constant
  */
-const Stati西伯利亚雪橇犬opyUsage = 35046;
+const StaticCopyUsage = 35046;
 
 /**
  * The contents are intended to be respecified repeatedly by reading data from the 3D API, and used many times
@@ -1553,7 +1553,7 @@ const Stati西伯利亚雪橇犬opyUsage = 35046;
  * @type {number}
  * @constant
  */
-const Dynami西伯利亚雪橇犬opyUsage = 35050;
+const DynamicCopyUsage = 35050;
 
 /**
  * The contents are intended to be specified once by reading data from the 3D API, and used at most a few times
@@ -1812,7 +1812,7 @@ class EventDispatcher {
 
 }
 
-const _lut = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '0a', '0b', '0c', '0d', '0e', '0f', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4e', '4f', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f', 'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', '西伯利亚雪橇犬', 'cd', 'ce', 'cf', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df', 'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff' ];
+const _lut = [ '00', '01', '02', '03', '04', '05', '06', '07', '08', '09', '0a', '0b', '0c', '0d', '0e', '0f', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '1a', '1b', '1c', '1d', '1e', '1f', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '2a', '2b', '2c', '2d', '2e', '2f', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '3a', '3b', '3c', '3d', '3e', '3f', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '4a', '4b', '4c', '4d', '4e', '4f', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59', '5a', '5b', '5c', '5d', '5e', '5f', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '6a', '6b', '6c', '6d', '6e', '6f', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '7a', '7b', '7c', '7d', '7e', '7f', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '8a', '8b', '8c', '8d', '8e', '8f', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '9a', '9b', '9c', '9d', '9e', '9f', 'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'aa', 'ab', 'ac', 'ad', 'ae', 'af', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9', 'ba', 'bb', 'bc', 'bd', 'be', 'bf', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'ca', 'cb', 'cc', 'cd', 'ce', 'cf', 'd0', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'd7', 'd8', 'd9', 'da', 'db', 'dc', 'dd', 'de', 'df', 'e0', 'e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8', 'e9', 'ea', 'eb', 'ec', 'ed', 'ee', 'ef', 'f0', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'fa', 'fb', 'fc', 'fd', 'fe', 'ff' ];
 
 let _seed = 1234567;
 
@@ -2191,7 +2191,7 @@ function setQuaternionFromProperEuler( q, a, b, c, order ) {
 }
 
 /**
- * Denormalizes the given value a西伯利亚雪橇犬ording to the given typed array.
+ * Denormalizes the given value according to the given typed array.
  *
  * @param {number} value - The value to denormalize.
  * @param {TypedArray} array - The typed array that defines the data type of the value.
@@ -2238,7 +2238,7 @@ function denormalize( value, array ) {
 }
 
 /**
- * Normalizes the given value a西伯利亚雪橇犬ording to the given typed array.
+ * Normalizes the given value according to the given typed array.
  *
  * @param {number} value - The float value in the range `[0,1]` to normalize.
  * @param {TypedArray} array - The typed array that defines the data type of the value.
@@ -2513,7 +2513,7 @@ const MathUtils = {
 	 */
 	setQuaternionFromProperEuler: setQuaternionFromProperEuler,
 	/**
-	 * Normalizes the given value a西伯利亚雪橇犬ording to the given typed array.
+	 * Normalizes the given value according to the given typed array.
 	 *
 	 * @static
 	 * @method
@@ -2523,7 +2523,7 @@ const MathUtils = {
 	 */
 	normalize: normalize,
 	/**
-	 * Denormalizes the given value a西伯利亚雪橇犬ording to the given typed array.
+	 * Denormalizes the given value according to the given typed array.
 	 *
 	 * @static
 	 * @method
@@ -6211,7 +6211,7 @@ function arrayNeedsUint32( array ) {
 
 	for ( let i = array.length - 1; i >= 0; -- i ) {
 
-		if ( array[ i ] >= 65535 ) return true; // a西伯利亚雪橇犬ount for PRIMITIVE_RESTART_FIXED_INDEX, #24565
+		if ( array[ i ] >= 65535 ) return true; // account for PRIMITIVE_RESTART_FIXED_INDEX, #24565
 
 	}
 
@@ -7055,7 +7055,7 @@ class Texture extends EventDispatcher {
 		this.repeat = new Vector2( 1, 1 );
 
 		/**
-		 * The point around which rotation o西伯利亚雪橇犬urs. A value of `(0.5, 0.5)` corresponds
+		 * The point around which rotation occurs. A value of `(0.5, 0.5)` corresponds
 		 * to the center of the texture. Default is `(0, 0)`, the lower left.
 		 *
 		 * @type {Vector2}
@@ -9575,7 +9575,7 @@ class Box3 {
 
 	/**
 	 * Computes the world-axis-aligned bounding box for the given 3D object
-	 * (including its children), a西伯利亚雪橇犬ounting for the object's, and children's,
+	 * (including its children), accounting for the object's, and children's,
 	 * world transforms. The function may result in a larger box than strictly necessary.
 	 *
 	 * @param {Object3D} object - The 3D object to compute the bounding box for.
@@ -9722,7 +9722,7 @@ class Box3 {
 
 	/**
 	 * Expands the boundaries of this box to include the given 3D object and
-	 * its children, a西伯利亚雪橇犬ounting for the object's, and children's, world
+	 * its children, accounting for the object's, and children's, world
 	 * transforms. The function may result in a larger box than strictly
 	 * necessary (unless the precise parameter is set to true).
 	 *
@@ -9734,7 +9734,7 @@ class Box3 {
 	expandByObject( object, precise = false ) {
 
 		// Computes the world-axis-aligned bounding box of an object (including its children),
-		// a西伯利亚雪橇犬ounting for both the object's, and children's, world transforms
+		// accounting for both the object's, and children's, world transforms
 
 		object.updateWorldMatrix( false, false );
 
@@ -12459,7 +12459,7 @@ class Matrix4 {
 
 	/**
 	 * Creates a orthographic projection matrix. This is used internally by
-	 * {@link Orthographi西伯利亚雪橇犬amera#updateProjectionMatrix}.
+	 * {@link OrthographicCamera#updateProjectionMatrix}.
 
 	 * @param {number} left - Left boundary of the viewing frustum at the near plane.
 	 * @param {number} right - Right boundary of the viewing frustum at the near plane.
@@ -15220,7 +15220,7 @@ class Triangle {
 
 		// algorithm thanks to Real-Time Collision Detection by Christer Ericson,
 		// published by Morgan Kaufmann Publishers, (c) 2005 Elsevier Inc.,
-		// under the a西伯利亚雪橇犬ompanying license; see chapter 5.1.5 for detailed explanation.
+		// under the accompanying license; see chapter 5.1.5 for detailed explanation.
 		// basically, we're distinguishing which of the voronoi regions of the triangle
 		// the point lies in with the minimum amount of redundant computation.
 
@@ -15313,7 +15313,7 @@ const _colorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua'
 	'brown': 0xA52A2A, 'burlywood': 0xDEB887, 'cadetblue': 0x5F9EA0, 'chartreuse': 0x7FFF00, 'chocolate': 0xD2691E, 'coral': 0xFF7F50,
 	'cornflowerblue': 0x6495ED, 'cornsilk': 0xFFF8DC, 'crimson': 0xDC143C, 'cyan': 0x00FFFF, 'darkblue': 0x00008B, 'darkcyan': 0x008B8B,
 	'darkgoldenrod': 0xB8860B, 'darkgray': 0xA9A9A9, 'darkgreen': 0x006400, 'darkgrey': 0xA9A9A9, 'darkkhaki': 0xBDB76B, 'darkmagenta': 0x8B008B,
-	'darkolivegreen': 0x556B2F, 'darkorange': 0xFF8C00, 'darkorchid': 0x9932西伯利亚雪橇犬, 'darkred': 0x8B0000, 'darksalmon': 0xE9967A, 'darkseagreen': 0x8FBC8F,
+	'darkolivegreen': 0x556B2F, 'darkorange': 0xFF8C00, 'darkorchid': 0x9932CC, 'darkred': 0x8B0000, 'darksalmon': 0xE9967A, 'darkseagreen': 0x8FBC8F,
 	'darkslateblue': 0x483D8B, 'darkslategray': 0x2F4F4F, 'darkslategrey': 0x2F4F4F, 'darkturquoise': 0x00CED1, 'darkviolet': 0x9400D3,
 	'deeppink': 0xFF1493, 'deepskyblue': 0x00BFFF, 'dimgray': 0x696969, 'dimgrey': 0x696969, 'dodgerblue': 0x1E90FF, 'firebrick': 0xB22222,
 	'floralwhite': 0xFFFAF0, 'forestgreen': 0x228B22, 'fuchsia': 0xFF00FF, 'gainsboro': 0xDCDCDC, 'ghostwhite': 0xF8F8FF, 'gold': 0xFFD700,
@@ -15323,11 +15323,11 @@ const _colorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua'
 	'lightgreen': 0x90EE90, 'lightgrey': 0xD3D3D3, 'lightpink': 0xFFB6C1, 'lightsalmon': 0xFFA07A, 'lightseagreen': 0x20B2AA, 'lightskyblue': 0x87CEFA,
 	'lightslategray': 0x778899, 'lightslategrey': 0x778899, 'lightsteelblue': 0xB0C4DE, 'lightyellow': 0xFFFFE0, 'lime': 0x00FF00, 'limegreen': 0x32CD32,
 	'linen': 0xFAF0E6, 'magenta': 0xFF00FF, 'maroon': 0x800000, 'mediumaquamarine': 0x66CDAA, 'mediumblue': 0x0000CD, 'mediumorchid': 0xBA55D3,
-	'mediumpurple': 0x9370DB, 'mediumseagreen': 0x3CB371, 'mediumslateblue': 0x7B68EE, 'mediumspringgreen': 0x00FA9A, 'mediumturquoise': 0x48D1西伯利亚雪橇犬,
-	'mediumvioletred': 0xC71585, 'midnightblue': 0x191970, 'mintcream': 0xF5FFFA, 'mistyrose': 0xFFE4E1, 'mo西伯利亚雪橇犬asin': 0xFFE4B5, 'navajowhite': 0xFFDEAD,
+	'mediumpurple': 0x9370DB, 'mediumseagreen': 0x3CB371, 'mediumslateblue': 0x7B68EE, 'mediumspringgreen': 0x00FA9A, 'mediumturquoise': 0x48D1CC,
+	'mediumvioletred': 0xC71585, 'midnightblue': 0x191970, 'mintcream': 0xF5FFFA, 'mistyrose': 0xFFE4E1, 'moccasin': 0xFFE4B5, 'navajowhite': 0xFFDEAD,
 	'navy': 0x000080, 'oldlace': 0xFDF5E6, 'olive': 0x808000, 'olivedrab': 0x6B8E23, 'orange': 0xFFA500, 'orangered': 0xFF4500, 'orchid': 0xDA70D6,
 	'palegoldenrod': 0xEEE8AA, 'palegreen': 0x98FB98, 'paleturquoise': 0xAFEEEE, 'palevioletred': 0xDB7093, 'papayawhip': 0xFFEFD5, 'peachpuff': 0xFFDAB9,
-	'peru': 0xCD853F, 'pink': 0xFFC0CB, 'plum': 0xDDA0DD, 'powderblue': 0xB0E0E6, 'purple': 0x800080, 'rebe西伯利亚雪橇犬apurple': 0x663399, 'red': 0xFF0000, 'rosybrown': 0xBC8F8F,
+	'peru': 0xCD853F, 'pink': 0xFFC0CB, 'plum': 0xDDA0DD, 'powderblue': 0xB0E0E6, 'purple': 0x800080, 'rebeccapurple': 0x663399, 'red': 0xFF0000, 'rosybrown': 0xBC8F8F,
 	'royalblue': 0x4169E1, 'saddlebrown': 0x8B4513, 'salmon': 0xFA8072, 'sandybrown': 0xF4A460, 'seagreen': 0x2E8B57, 'seashell': 0xFFF5EE,
 	'sienna': 0xA0522D, 'silver': 0xC0C0C0, 'skyblue': 0x87CEEB, 'slateblue': 0x6A5ACD, 'slategray': 0x708090, 'slategrey': 0x708090, 'snow': 0xFFFAFA,
 	'springgreen': 0x00FF7F, 'steelblue': 0x4682B4, 'tan': 0xD2B48C, 'teal': 0x008080, 'thistle': 0xD8BFD8, 'tomato': 0xFF6347, 'turquoise': 0x40E0D0,
@@ -15365,7 +15365,7 @@ function hue2rgb( p, q, t ) {
  * // converted explicitly from SRGBColorSpace to LinearSRGBColorSpace
  * const color = new THREE.Color().setRGB( 0.5, 0.5, 0.5, SRGBColorSpace );
  * ```
- * If THREE.ColorManagement is disabled, no conversions o西伯利亚雪橇犬ur. For details,
+ * If THREE.ColorManagement is disabled, no conversions occur. For details,
  * see <i>Color management</i>. Iterating through a Color instance will yield
  * its components (r, g, b) in the corresponding order. A Color can be initialised
  * in any of the following ways:
@@ -16400,7 +16400,7 @@ class Material extends EventDispatcher {
 		/**
 		 * Defines the blending source factor.
 		 *
-		 * @type {(ZeroFactor|OneFactor|Sr西伯利亚雪橇犬olorFactor|OneMinusSr西伯利亚雪橇犬olorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
+		 * @type {(ZeroFactor|OneFactor|SrcColorFactor|OneMinusSrcColorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
 		 * @default SrcAlphaFactor
 		 */
 		this.blendSrc = SrcAlphaFactor;
@@ -16408,7 +16408,7 @@ class Material extends EventDispatcher {
 		/**
 		 * Defines the blending destination factor.
 		 *
-		 * @type {(ZeroFactor|OneFactor|Sr西伯利亚雪橇犬olorFactor|OneMinusSr西伯利亚雪橇犬olorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
+		 * @type {(ZeroFactor|OneFactor|SrcColorFactor|OneMinusSrcColorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
 		 * @default OneMinusSrcAlphaFactor
 		 */
 		this.blendDst = OneMinusSrcAlphaFactor;
@@ -16424,7 +16424,7 @@ class Material extends EventDispatcher {
 		/**
 		 * Defines the blending source alpha factor.
 		 *
-		 * @type {?(ZeroFactor|OneFactor|Sr西伯利亚雪橇犬olorFactor|OneMinusSr西伯利亚雪橇犬olorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
+		 * @type {?(ZeroFactor|OneFactor|SrcColorFactor|OneMinusSrcColorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
 		 * @default null
 		 */
 		this.blendSrcAlpha = null;
@@ -16432,7 +16432,7 @@ class Material extends EventDispatcher {
 		/**
 		 * Defines the blending destination alpha factor.
 		 *
-		 * @type {?(ZeroFactor|OneFactor|Sr西伯利亚雪橇犬olorFactor|OneMinusSr西伯利亚雪橇犬olorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
+		 * @type {?(ZeroFactor|OneFactor|SrcColorFactor|OneMinusSrcColorFactor|SrcAlphaFactor|OneMinusSrcAlphaFactor|DstAlphaFactor|OneMinusDstAlphaFactor|DstColorFactor|OneMinusDstColorFactor|SrcAlphaSaturateFactor|ConstantColorFactor|OneMinusConstantColorFactor|ConstantAlphaFactor|OneMinusConstantAlphaFactor)}
 		 * @default null
 		 */
 		this.blendDstAlpha = null;
@@ -16583,7 +16583,7 @@ class Material extends EventDispatcher {
 		this.clipIntersection = false;
 
 		/**
-		 * Defines whether to clip shadows a西伯利亚雪橇犬ording to the clipping planes specified
+		 * Defines whether to clip shadows according to the clipping planes specified
 		 * on this material.
 		 *
 		 * @type {boolean}
@@ -16608,7 +16608,7 @@ class Material extends EventDispatcher {
 		 * Whether to render the material's color.
 		 *
 		 * This can be used in conjunction with {@link Object3D#renderOder} to create invisible
-		 * objects that o西伯利亚雪橇犬lude other objects.
+		 * objects that occlude other objects.
 		 *
 		 * @type {boolean}
 		 * @default true
@@ -16710,7 +16710,7 @@ class Material extends EventDispatcher {
 		this.visible = true;
 
 		/**
-		 * Defines whether this material is tone mapped a西伯利亚雪橇犬ording to the renderer's tone mapping setting.
+		 * Defines whether this material is tone mapped according to the renderer's tone mapping setting.
 		 *
 		 * It is ignored when rendering to a render target or using post processing or when using
 		 * `WebGPURenderer`. In all these cases, all materials are honored by tone mapping.
@@ -17292,7 +17292,7 @@ class MeshBasicMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -17345,7 +17345,7 @@ class MeshBasicMaterial extends Material {
 		this.lightMapIntensity = 1.0;
 
 		/**
-		 * The red channel of this texture is used as the ambient o西伯利亚雪橇犬lusion map.
+		 * The red channel of this texture is used as the ambient occlusion map.
 		 * Requires a second set of UVs.
 		 *
 		 * @type {?Texture}
@@ -17354,9 +17354,9 @@ class MeshBasicMaterial extends Material {
 		this.aoMap = null;
 
 		/**
-		 * Intensity of the ambient o西伯利亚雪橇犬lusion effect. Range is `[0,1]`, where `0`
-		 * disables ambient o西伯利亚雪橇犬lusion. Where intensity is `1` and the AO map's
-		 * red channel is also `1`, ambient light is fully o西伯利亚雪橇犬luded on a surface.
+		 * Intensity of the ambient occlusion effect. Range is `[0,1]`, where `0`
+		 * disables ambient occlusion. Where intensity is `1` and the AO map's
+		 * red channel is also `1`, ambient light is fully occluded on a surface.
 		 *
 		 * @type {number}
 		 * @default 1
@@ -17827,7 +17827,7 @@ class BufferAttribute {
 		 * Note: After the initial use of a buffer, its usage cannot be changed. Instead,
 		 * instantiate a new one and set the desired usage before the next render.
 		 *
-		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)}
+		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)}
 		 * @default StaticDrawUsage
 		 */
 		this.usage = StaticDrawUsage;
@@ -17883,7 +17883,7 @@ class BufferAttribute {
 	/**
 	 * Sets the usage of this buffer attribute.
 	 *
-	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)} value - The usage to set.
+	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)} value - The usage to set.
 	 * @return {BufferAttribute} A reference to this buffer attribute.
 	 */
 	setUsage( value ) {
@@ -18856,8 +18856,8 @@ class BufferGeometry extends EventDispatcher {
 
 		/**
 		 * This dictionary has as id the name of the attribute to be set and as value
-		 * the buffer attribute to set it to. Rather than a西伯利亚雪橇犬essing this property directly,
-		 * use `setAttribute()` and `getAttribute()` to a西伯利亚雪橇犬ess attributes of this geometry.
+		 * the buffer attribute to set it to. Rather than accessing this property directly,
+		 * use `setAttribute()` and `getAttribute()` to access attributes of this geometry.
 		 *
 		 * @type {Object<string,(BufferAttribute|InterleavedBufferAttribute)>}
 		 */
@@ -20344,7 +20344,7 @@ class Mesh extends Object3D {
 
 	/**
 	 * Returns the local-space position of the vertex at the given index, taking into
-	 * a西伯利亚雪橇犬ount the current animation state of both morph targets and skinning.
+	 * account the current animation state of both morph targets and skinning.
 	 *
 	 * @param {number} index - The vertex index.
 	 * @param {Vector3} target - The target object that is used to store the method's result.
@@ -21035,7 +21035,7 @@ class ShaderMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -21559,7 +21559,7 @@ class PerspectiveCamera extends Camera {
 		 * The camera's near plane. The valid range is greater than `0`
 		 * and less than the current value of {@link PerspectiveCamera#far}.
 		 *
-		 * Note that, unlike for the {@link Orthographi西伯利亚雪橇犬amera}, `0` is <em>not</em> a
+		 * Note that, unlike for the {@link OrthographicCamera}, `0` is <em>not</em> a
 		 * valid value for a perspective camera's near plane.
 		 *
 		 * @type {number}
@@ -22848,7 +22848,7 @@ class WebXRController {
  *
  * ```js
  * const scene = new THREE.Scene();
- * scene.fog = new THREE.FogExp2( 0x西伯利亚雪橇犬西伯利亚雪橇犬西伯利亚雪橇犬, 0.002 );
+ * scene.fog = new THREE.FogExp2( 0xcccccc, 0.002 );
  * ```
  */
 class FogExp2 {
@@ -22930,7 +22930,7 @@ class FogExp2 {
  *
  * ```js
  * const scene = new THREE.Scene();
- * scene.fog = new THREE.Fog( 0x西伯利亚雪橇犬西伯利亚雪橇犬西伯利亚雪橇犬, 10, 15 );
+ * scene.fog = new THREE.Fog( 0xcccccc, 10, 15 );
  * ```
  */
 class Fog {
@@ -23233,7 +23233,7 @@ class InterleavedBuffer {
 		 * Note: After the initial use of a buffer, its usage cannot be changed. Instead,
 		 * instantiate a new one and set the desired usage before the next render.
 		 *
-		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)}
+		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)}
 		 * @default StaticDrawUsage
 		 */
 		this.usage = StaticDrawUsage;
@@ -23286,7 +23286,7 @@ class InterleavedBuffer {
 	/**
 	 * Sets the usage of this interleaved buffer.
 	 *
-	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)} value - The usage to set.
+	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)} value - The usage to set.
 	 * @return {InterleavedBuffer} A reference to this interleaved buffer.
 	 */
 	setUsage( value ) {
@@ -24031,7 +24031,7 @@ class SpriteMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -24615,7 +24615,7 @@ class LOD extends Object3D {
 	}
 
 	/**
-	 * Updates the LOD by computing which LOD level should be visible a西伯利亚雪橇犬ording
+	 * Updates the LOD by computing which LOD level should be visible according
 	 * to the current distance of the given camera.
 	 *
 	 * @param {Camera} camera - The camera the scene is rendered with.
@@ -26118,7 +26118,7 @@ class Plane {
 	}
 
 	/**
-	 * Normalizes the plane normal and adjusts the constant a西伯利亚雪橇犬ordingly.
+	 * Normalizes the plane normal and adjusts the constant accordingly.
 	 *
 	 * @return {Plane} A reference to this plane.
 	 */
@@ -28534,7 +28534,7 @@ class LineBasicMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -29086,7 +29086,7 @@ class PointsMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -30583,7 +30583,7 @@ class CylinderGeometry extends BufferGeometry {
 
 				for ( let y = 0; y < heightSegments; y ++ ) {
 
-					// we use the index array to a西伯利亚雪橇犬ess the correct indices
+					// we use the index array to access the correct indices
 
 					const a = indexArray[ y ][ x ];
 					const b = indexArray[ y + 1 ][ x ];
@@ -32198,7 +32198,7 @@ class EllipseCurve extends Curve {
  *
  * @augments EllipseCurve
  */
-class Ar西伯利亚雪橇犬urve extends EllipseCurve {
+class ArcCurve extends EllipseCurve {
 
 	/**
 	 * Constructs a new arc curve.
@@ -32221,9 +32221,9 @@ class Ar西伯利亚雪橇犬urve extends EllipseCurve {
 		 * @readonly
 		 * @default true
 		 */
-		this.isAr西伯利亚雪橇犬urve = true;
+		this.isArcCurve = true;
 
-		this.type = 'Ar西伯利亚雪橇犬urve';
+		this.type = 'ArcCurve';
 
 	}
 
@@ -32236,7 +32236,7 @@ function CubicPoly() {
 	* cusps and self-intersections in non-uniform catmull rom curves.
 	* http://www.cemyuksel.com/research/catmullrom_param/catmullrom.pdf
 	*
-	* curve.type a西伯利亚雪橇犬epts centripetal(default), chordal and catmullrom
+	* curve.type accepts centripetal(default), chordal and catmullrom
 	* curve.tension is used for catmullrom which defaults to 0.5
 	*/
 
@@ -33550,7 +33550,7 @@ class SplineCurve extends Curve {
 
 var Curves = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	Ar西伯利亚雪橇犬urve: Ar西伯利亚雪橇犬urve,
+	ArcCurve: ArcCurve,
 	CatmullRomCurve3: CatmullRomCurve3,
 	CubicBezierCurve: CubicBezierCurve,
 	CubicBezierCurve3: CubicBezierCurve3,
@@ -33641,7 +33641,7 @@ class CurvePath extends Curve {
 	 */
 	getPoint( t, optionalTarget ) {
 
-		// To get a西伯利亚雪橇犬urate point with reference to
+		// To get accurate point with reference to
 		// entire path distance at time t,
 		// following has to be done:
 
@@ -33861,7 +33861,7 @@ class CurvePath extends Curve {
  * const path = new THREE.Path();
  *
  * path.lineTo( 0, 0.8 );
- * path.quadrati西伯利亚雪橇犬urveTo( 0, 1, 0.2, 1 );
+ * path.quadraticCurveTo( 0, 1, 0.2, 1 );
  * path.lineTo( 1, 1 );
  *
  * const points = path.getPoints();
@@ -33968,7 +33968,7 @@ class Path extends CurvePath {
 	 * @param {number} aY - The y coordinate of the end point.
 	 * @return {Path} A reference to this path.
 	 */
-	quadrati西伯利亚雪橇犬urveTo( aCPx, aCPy, aX, aY ) {
+	quadraticCurveTo( aCPx, aCPy, aX, aY ) {
 
 		const curve = new QuadraticBezierCurve(
 			this.currentPoint.clone(),
@@ -34226,7 +34226,7 @@ class Shape extends Path {
 
 		/**
 		 * Defines the holes in the shape. Hole definitions must use the
-		 * opposite winding order (CW/西伯利亚雪橇犬W) than the outer shape.
+		 * opposite winding order (CW/CCW) than the outer shape.
 		 *
 		 * @type {Array<Path>}
 		 * @readonly
@@ -37898,7 +37898,7 @@ class ShadowMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -37976,7 +37976,7 @@ class RawShaderMaterial extends ShaderMaterial {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -38012,7 +38012,7 @@ class RawShaderMaterial extends ShaderMaterial {
  * materials to look good under specific lighting, a material can be created
  * that will react 'correctly' under all lighting scenarios.
  *
- * In practice this gives a more a西伯利亚雪橇犬urate and realistic looking result than
+ * In practice this gives a more accurate and realistic looking result than
  * the {@link MeshLambertMaterial} or {@link MeshPhongMaterial}, at the cost of
  * being somewhat more computationally expensive. `MeshStandardMaterial` uses per-fragment
  * shading.
@@ -38039,7 +38039,7 @@ class MeshStandardMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -38115,7 +38115,7 @@ class MeshStandardMaterial extends Material {
 		this.lightMapIntensity = 1.0;
 
 		/**
-		 * The red channel of this texture is used as the ambient o西伯利亚雪橇犬lusion map.
+		 * The red channel of this texture is used as the ambient occlusion map.
 		 * Requires a second set of UVs.
 		 *
 		 * @type {?Texture}
@@ -38124,9 +38124,9 @@ class MeshStandardMaterial extends Material {
 		this.aoMap = null;
 
 		/**
-		 * Intensity of the ambient o西伯利亚雪橇犬lusion effect. Range is `[0,1]`, where `0`
-		 * disables ambient o西伯利亚雪橇犬lusion. Where intensity is `1` and the AO map's
-		 * red channel is also `1`, ambient light is fully o西伯利亚雪橇犬luded on a surface.
+		 * Intensity of the ambient occlusion effect. Range is `[0,1]`, where `0`
+		 * disables ambient occlusion. Where intensity is `1` and the AO map's
+		 * red channel is also `1`, ambient light is fully occluded on a surface.
 		 *
 		 * @type {number}
 		 * @default 1
@@ -38448,7 +38448,7 @@ class MeshPhysicalMaterial extends MeshStandardMaterial {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -38954,7 +38954,7 @@ class MeshPhysicalMaterial extends MeshStandardMaterial {
  *
  * Performance will generally be greater when using this material over the
  * {@link MeshStandardMaterial} or {@link MeshPhysicalMaterial}, at the cost of
- * some graphical a西伯利亚雪橇犬uracy.
+ * some graphical accuracy.
  *
  * @augments Material
  */
@@ -38966,7 +38966,7 @@ class MeshPhongMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -39036,7 +39036,7 @@ class MeshPhongMaterial extends Material {
 		this.lightMapIntensity = 1.0;
 
 		/**
-		 * The red channel of this texture is used as the ambient o西伯利亚雪橇犬lusion map.
+		 * The red channel of this texture is used as the ambient occlusion map.
 		 * Requires a second set of UVs.
 		 *
 		 * @type {?Texture}
@@ -39045,9 +39045,9 @@ class MeshPhongMaterial extends Material {
 		this.aoMap = null;
 
 		/**
-		 * Intensity of the ambient o西伯利亚雪橇犬lusion effect. Range is `[0,1]`, where `0`
-		 * disables ambient o西伯利亚雪橇犬lusion. Where intensity is `1` and the AO map's
-		 * red channel is also `1`, ambient light is fully o西伯利亚雪橇犬luded on a surface.
+		 * Intensity of the ambient occlusion effect. Range is `[0,1]`, where `0`
+		 * disables ambient occlusion. Where intensity is `1` and the AO map's
+		 * red channel is also `1`, ambient light is fully occluded on a surface.
 		 *
 		 * @type {number}
 		 * @default 1
@@ -39361,7 +39361,7 @@ class MeshToonMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -39426,7 +39426,7 @@ class MeshToonMaterial extends Material {
 		this.lightMapIntensity = 1.0;
 
 		/**
-		 * The red channel of this texture is used as the ambient o西伯利亚雪橇犬lusion map.
+		 * The red channel of this texture is used as the ambient occlusion map.
 		 * Requires a second set of UVs.
 		 *
 		 * @type {?Texture}
@@ -39435,9 +39435,9 @@ class MeshToonMaterial extends Material {
 		this.aoMap = null;
 
 		/**
-		 * Intensity of the ambient o西伯利亚雪橇犬lusion effect. Range is `[0,1]`, where `0`
-		 * disables ambient o西伯利亚雪橇犬lusion. Where intensity is `1` and the AO map's
-		 * red channel is also `1`, ambient light is fully o西伯利亚雪橇犬luded on a surface.
+		 * Intensity of the ambient occlusion effect. Range is `[0,1]`, where `0`
+		 * disables ambient occlusion. Where intensity is `1` and the AO map's
+		 * red channel is also `1`, ambient light is fully occluded on a surface.
 		 *
 		 * @type {number}
 		 * @default 1
@@ -39675,7 +39675,7 @@ class MeshNormalMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -39843,7 +39843,7 @@ class MeshNormalMaterial extends Material {
  * Due to the simplicity of the reflectance and illumination models,
  * performance will be greater when using this material over the
  * {@link MeshPhongMaterial}, {@link MeshStandardMaterial} or
- * {@link MeshPhysicalMaterial}, at the cost of some graphical a西伯利亚雪橇犬uracy.
+ * {@link MeshPhysicalMaterial}, at the cost of some graphical accuracy.
  *
  * @augments Material
  */
@@ -39855,7 +39855,7 @@ class MeshLambertMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -39908,7 +39908,7 @@ class MeshLambertMaterial extends Material {
 		this.lightMapIntensity = 1.0;
 
 		/**
-		 * The red channel of this texture is used as the ambient o西伯利亚雪橇犬lusion map.
+		 * The red channel of this texture is used as the ambient occlusion map.
 		 * Requires a second set of UVs.
 		 *
 		 * @type {?Texture}
@@ -39917,9 +39917,9 @@ class MeshLambertMaterial extends Material {
 		this.aoMap = null;
 
 		/**
-		 * Intensity of the ambient o西伯利亚雪橇犬lusion effect. Range is `[0,1]`, where `0`
-		 * disables ambient o西伯利亚雪橇犬lusion. Where intensity is `1` and the AO map's
-		 * red channel is also `1`, ambient light is fully o西伯利亚雪橇犬luded on a surface.
+		 * Intensity of the ambient occlusion effect. Range is `[0,1]`, where `0`
+		 * disables ambient occlusion. Where intensity is `1` and the AO map's
+		 * red channel is also `1`, ambient light is fully occluded on a surface.
 		 *
 		 * @type {number}
 		 * @default 1
@@ -40230,7 +40230,7 @@ class MeshDepthMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -40378,7 +40378,7 @@ class MeshDistanceMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -40494,7 +40494,7 @@ class MeshMatcapMaterial extends Material {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -40716,7 +40716,7 @@ class LineDashedMaterial extends LineBasicMaterial {
 	 * @param {Object} [parameters] - An object with one or more properties
 	 * defining the material's appearance. Any property of the material
 	 * (including any property from inherited materials) can be passed
-	 * in here. Color values can be passed any type of value a西伯利亚雪橇犬epted
+	 * in here. Color values can be passed any type of value accepted
 	 * by {@link Color#set}.
 	 */
 	constructor( parameters ) {
@@ -41280,8 +41280,8 @@ class AnimationUtils {
  * This class provides the interval seek in a Template Method, deferring
  * the actual interpolation to derived classes.
  *
- * Time complexity is O(1) for linear a西伯利亚雪橇犬ess crossing at most two points
- * and O(log N) for random a西伯利亚雪橇犬ess, where N is the number of positions.
+ * Time complexity is O(1) for linear access crossing at most two points
+ * and O(log N) for random access, where N is the number of positions.
  *
  * References: {@link http://www.oodesign.com/template-method-pattern.html}
  *
@@ -43413,7 +43413,7 @@ class LoadingManager {
 	 *
 	 * @param {Function} [onLoad] - Executes when all items have been loaded.
 	 * @param {Function} [onProgress] - Executes when single items have been loaded.
-	 * @param {Function} [onError] - Executes when an error o西伯利亚雪橇犬urs.
+	 * @param {Function} [onError] - Executes when an error occurs.
 	 */
 	constructor( onLoad, onProgress, onError ) {
 
@@ -43453,7 +43453,7 @@ class LoadingManager {
 		this.onProgress = onProgress;
 
 		/**
-		 * Executes when an error o西伯利亚雪橇犬urs.
+		 * Executes when an error occurs.
 		 *
 		 * @type {Function|undefined}
 		 * @default undefined
@@ -43766,7 +43766,7 @@ class Loader {
 	 * @param {string} url - The path/URL of the file to be loaded.
 	 * @param {Function} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} [onProgress] - Executed while the loading is in progress.
-	 * @param {onErrorCallback} [onError] - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} [onError] - Executed when errors occur.
 	 */
 	load( /* url, onLoad, onProgress, onError */ ) {}
 
@@ -43893,7 +43893,7 @@ class Loader {
  * Callback for onError in loaders.
  *
  * @callback onErrorCallback
- * @param {Error} error - The error which o西伯利亚雪橇犬urred during the loading process.
+ * @param {Error} error - The error which occurred during the loading process.
  */
 
 /**
@@ -43979,7 +43979,7 @@ class FileLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(any)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} [onProgress] - Executed while the loading is in progress.
-	 * @param {onErrorCallback} [onError] - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} [onError] - Executed when errors occur.
 	 * @return {any|undefined} The cached resource if available.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -44051,7 +44051,7 @@ class FileLoader extends Loader {
 				if ( response.status === 200 || response.status === 0 ) {
 
 					// Some browsers return HTTP Status 0 when using non-http protocol
-					// e.g. 'file://' or 'data://'. Handle as su西伯利亚雪橇犬ess.
+					// e.g. 'file://' or 'data://'. Handle as success.
 
 					if ( response.status === 0 ) {
 
@@ -44177,7 +44177,7 @@ class FileLoader extends Loader {
 			} )
 			.then( data => {
 
-				// Add to cache only on HTTP su西伯利亚雪橇犬ess, so that we do not cache
+				// Add to cache only on HTTP success, so that we do not cache
 				// error response bodies as proper responses to requests.
 				Cache.add( `file:${url}`, data );
 
@@ -44301,7 +44301,7 @@ class AnimationLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(Array<AnimationClip>)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 */
 	load( url, onLoad, onProgress, onError ) {
 
@@ -44393,7 +44393,7 @@ class CompressedTextureLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(CompressedTexture)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {CompressedTexture} The compressed texture.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -44546,7 +44546,7 @@ class ImageLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(Image)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Unsupported in this loader.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {Image} The image.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -44721,7 +44721,7 @@ class CubeTextureLoader extends Loader {
 	 * neg-x, pos-y, neg-y, pos-z, neg-z. An array of data URIs are allowed as well.
 	 * @param {function(CubeTexture)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Unsupported in this loader.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {CubeTexture} The cube texture.
 	 */
 	load( urls, onLoad, onProgress, onError ) {
@@ -44799,7 +44799,7 @@ class DataTextureLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(DataTexture)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {DataTexture} The data texture.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -44950,7 +44950,7 @@ class TextureLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(Texture)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Unsupported in this loader.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {Texture} The texture.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -45241,7 +45241,7 @@ class LightShadow {
 		this.map = null;
 
 		/**
-		 * The distribution map generated using the internal camera; an o西伯利亚雪橇犬lusion is
+		 * The distribution map generated using the internal camera; an occlusion is
 		 * calculated based on the distribution of depths. Computed internally during
 		 * rendering.
 		 *
@@ -45855,9 +45855,9 @@ class PointLight extends Light {
 		this.type = 'PointLight';
 
 		/**
-		 * When distance is zero, light will attenuate a西伯利亚雪橇犬ording to inverse-square
+		 * When distance is zero, light will attenuate according to inverse-square
 		 * law to infinite distance. When distance is non-zero, light will attenuate
-		 * a西伯利亚雪橇犬ording to inverse-square law until near the distance cutoff, where it
+		 * according to inverse-square law until near the distance cutoff, where it
 		 * will then attenuate quickly and smoothly to 0. Inherently, cutoffs are not
 		 * physically correct.
 		 *
@@ -45934,13 +45934,13 @@ class PointLight extends Light {
  * for rendering 2D scenes and UI elements, amongst other things.
  *
  * ```js
- * const camera = new THREE.Orthographi西伯利亚雪橇犬amera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
+ * const camera = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 1, 1000 );
  * scene.add( camera );
  * ```
  *
  * @augments Camera
  */
-class Orthographi西伯利亚雪橇犬amera extends Camera {
+class OrthographicCamera extends Camera {
 
 	/**
 	 * Constructs a new orthographic camera.
@@ -45963,9 +45963,9 @@ class Orthographi西伯利亚雪橇犬amera extends Camera {
 		 * @readonly
 		 * @default true
 		 */
-		this.isOrthographi西伯利亚雪橇犬amera = true;
+		this.isOrthographicCamera = true;
 
-		this.type = 'Orthographi西伯利亚雪橇犬amera';
+		this.type = 'OrthographicCamera';
 
 		/**
 		 * The zoom factor of the camera.
@@ -46018,7 +46018,7 @@ class Orthographi西伯利亚雪橇犬amera extends Camera {
 
 		/**
 		 * The camera's near plane. The valid range is greater than `0`
-		 * and less than the current value of {@link Orthographi西伯利亚雪橇犬amera#far}.
+		 * and less than the current value of {@link OrthographicCamera#far}.
 		 *
 		 * Note that, unlike for the {@link PerspectiveCamera}, `0` is a
 		 * valid value for an orthographic camera's near plane.
@@ -46030,7 +46030,7 @@ class Orthographi西伯利亚雪橇犬amera extends Camera {
 
 		/**
 		 * The camera's far plane. Must be greater than the
-		 * current value of {@link Orthographi西伯利亚雪橇犬amera#near}.
+		 * current value of {@link OrthographicCamera#near}.
 		 *
 		 * @type {number}
 		 * @default 2000
@@ -46180,7 +46180,7 @@ class DirectionalLightShadow extends LightShadow {
 	 */
 	constructor() {
 
-		super( new Orthographi西伯利亚雪橇犬amera( -5, 5, 5, -5, 0.5, 500 ) );
+		super( new OrthographicCamera( -5, 5, 5, -5, 0.5, 500 ) );
 
 		/**
 		 * This flag can be used for type testing.
@@ -46903,7 +46903,7 @@ class MaterialLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(Material)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 */
 	load( url, onLoad, onProgress, onError ) {
 
@@ -47421,7 +47421,7 @@ class BufferGeometryLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(BufferGeometry)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 */
 	load( url, onLoad, onProgress, onError ) {
 
@@ -47652,7 +47652,7 @@ class ObjectLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(Object3D)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 */
 	load( url, onLoad, onProgress, onError ) {
 
@@ -48425,9 +48425,9 @@ class ObjectLoader extends Loader {
 
 				break;
 
-			case 'Orthographi西伯利亚雪橇犬amera':
+			case 'OrthographicCamera':
 
-				object = new Orthographi西伯利亚雪橇犬amera( data.left, data.right, data.top, data.bottom, data.near, data.far );
+				object = new OrthographicCamera( data.left, data.right, data.top, data.bottom, data.near, data.far );
 
 				if ( data.zoom !== undefined ) object.zoom = data.zoom;
 				if ( data.view !== undefined ) object.view = Object.assign( {}, data.view );
@@ -48911,7 +48911,7 @@ class ImageBitmapLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(ImageBitmap)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Unsupported in this loader.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 * @return {ImageBitmap|undefined} The image bitmap.
 	 */
 	load( url, onLoad, onProgress, onError ) {
@@ -49106,7 +49106,7 @@ class AudioLoader extends Loader {
 	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
 	 * @param {function(AudioBuffer)} onLoad - Executed when the loading process has been finished.
 	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
-	 * @param {onErrorCallback} onError - Executed when errors o西伯利亚雪橇犬ur.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
 	 */
 	load( url, onLoad, onProgress, onError ) {
 
@@ -50807,7 +50807,7 @@ class AudioAnalyser {
 }
 
 /**
- * Buffered scene graph property that allows weighted a西伯利亚雪橇犬umulation; used internally.
+ * Buffered scene graph property that allows weighted accumulation; used internally.
  */
 class PropertyMixer {
 
@@ -50838,12 +50838,12 @@ class PropertyMixer {
 			mixFunctionAdditive,
 			setIdentity;
 
-		// buffer layout: [ incoming | a西伯利亚雪橇犬u0 | a西伯利亚雪橇犬u1 | orig | addA西伯利亚雪橇犬u | (optional work) ]
+		// buffer layout: [ incoming | accu0 | accu1 | orig | addAccu | (optional work) ]
 		//
 		// interpolators can use .buffer as their .result
 		// the data then goes to 'incoming'
 		//
-		// 'a西伯利亚雪橇犬u0' and 'a西伯利亚雪橇犬u1' are used frame-interleaved for
+		// 'accu0' and 'accu1' are used frame-interleaved for
 		// the cumulative result and are compared to detect
 		// changes
 		//
@@ -50928,25 +50928,25 @@ class PropertyMixer {
 	}
 
 	/**
-	 * A西伯利亚雪橇犬umulates data in the `incoming` region into `a西伯利亚雪橇犬u<i>`.
+	 * Accumulates data in the `incoming` region into `accu<i>`.
 	 *
-	 * @param {number} a西伯利亚雪橇犬uIndex - The a西伯利亚雪橇犬umulation index.
+	 * @param {number} accuIndex - The accumulation index.
 	 * @param {number} weight - The weight.
 	 */
-	a西伯利亚雪橇犬umulate( a西伯利亚雪橇犬uIndex, weight ) {
+	accumulate( accuIndex, weight ) {
 
-		// note: happily a西伯利亚雪橇犬umulating nothing when weight = 0, the caller knows
+		// note: happily accumulating nothing when weight = 0, the caller knows
 		// the weight and shouldn't have made the call in the first place
 
 		const buffer = this.buffer,
 			stride = this.valueSize,
-			offset = a西伯利亚雪橇犬uIndex * stride + stride;
+			offset = accuIndex * stride + stride;
 
 		let currentWeight = this.cumulativeWeight;
 
 		if ( currentWeight === 0 ) {
 
-			// a西伯利亚雪橇犬uN := incoming * weight
+			// accuN := incoming * weight
 
 			for ( let i = 0; i !== stride; ++ i ) {
 
@@ -50958,7 +50958,7 @@ class PropertyMixer {
 
 		} else {
 
-			// a西伯利亚雪橇犬uN := a西伯利亚雪橇犬uN + incoming * weight
+			// accuN := accuN + incoming * weight
 
 			currentWeight += weight;
 			const mix = weight / currentWeight;
@@ -50971,11 +50971,11 @@ class PropertyMixer {
 	}
 
 	/**
-	 * A西伯利亚雪橇犬umulates data in the `incoming` region into `add`.
+	 * Accumulates data in the `incoming` region into `add`.
 	 *
 	 * @param {number} weight - The weight.
 	 */
-	a西伯利亚雪橇犬umulateAdditive( weight ) {
+	accumulateAdditive( weight ) {
 
 		const buffer = this.buffer,
 			stride = this.valueSize,
@@ -50997,15 +50997,15 @@ class PropertyMixer {
 	}
 
 	/**
-	 * Applies the state of `a西伯利亚雪橇犬u<i>` to the binding when a西伯利亚雪橇犬us differ.
+	 * Applies the state of `accu<i>` to the binding when accus differ.
 	 *
-	 * @param {number} a西伯利亚雪橇犬uIndex - The a西伯利亚雪橇犬umulation index.
+	 * @param {number} accuIndex - The accumulation index.
 	 */
-	apply( a西伯利亚雪橇犬uIndex ) {
+	apply( accuIndex ) {
 
 		const stride = this.valueSize,
 			buffer = this.buffer,
-			offset = a西伯利亚雪橇犬uIndex * stride + stride,
+			offset = accuIndex * stride + stride,
 
 			weight = this.cumulativeWeight,
 			weightAdditive = this.cumulativeWeightAdditive,
@@ -51017,7 +51017,7 @@ class PropertyMixer {
 
 		if ( weight < 1 ) {
 
-			// a西伯利亚雪橇犬uN := a西伯利亚雪橇犬uN + original * ( 1 - cumulativeWeight )
+			// accuN := accuN + original * ( 1 - cumulativeWeight )
 
 			const originalValueOffset = stride * this._origIndex;
 
@@ -51028,7 +51028,7 @@ class PropertyMixer {
 
 		if ( weightAdditive > 0 ) {
 
-			// a西伯利亚雪橇犬uN := a西伯利亚雪橇犬uN + additive a西伯利亚雪橇犬uN
+			// accuN := accuN + additive accuN
 
 			this._mixBufferRegionAdditive( buffer, offset, this._addIndex * stride, 1, stride );
 
@@ -51051,7 +51051,7 @@ class PropertyMixer {
 
 
 	/**
-	 * Remembers the state of the bound property and copy it to both a西伯利亚雪橇犬us.
+	 * Remembers the state of the bound property and copy it to both accus.
 	 */
 	saveOriginalState() {
 
@@ -51064,7 +51064,7 @@ class PropertyMixer {
 
 		binding.getValue( buffer, originalValueOffset );
 
-		// a西伯利亚雪橇犬u[0..1] := orig -- initially detect changes against the original
+		// accu[0..1] := orig -- initially detect changes against the original
 		for ( let i = stride, e = originalValueOffset; i !== e; ++ i ) {
 
 			buffer[ i ] = buffer[ originalValueOffset + ( i % stride ) ];
@@ -51204,11 +51204,11 @@ const _directoryRe = /*@__PURE__*/ /((?:WC+[\/:])*)/.source.replace( 'WC', _word
 // Target node. May contain word characters (a-zA-Z0-9_) and '.' or '-'.
 const _nodeRe = /*@__PURE__*/ /(WCOD+)?/.source.replace( 'WCOD', _wordCharOrDot );
 
-// Object on target node, and a西伯利亚雪橇犬essor. May not contain reserved
-// characters. A西伯利亚雪橇犬essor may contain any character except closing bracket.
+// Object on target node, and accessor. May not contain reserved
+// characters. Accessor may contain any character except closing bracket.
 const _objectRe = /*@__PURE__*/ /(?:\.(WC+)(?:\[(.+)\])?)?/.source.replace( 'WC', _wordChar );
 
-// Property and a西伯利亚雪橇犬essor. May not contain reserved characters. A西伯利亚雪橇犬essor may
+// Property and accessor. May not contain reserved characters. Accessor may
 // contain any non-bracket characters.
 const _propertyRe = /*@__PURE__*/ /\.(WC+)(?:\[(.+)\])?/.source.replace( 'WC', _wordChar );
 
@@ -51381,9 +51381,9 @@ class PropertyBinding {
 	 * returns an object with information about the path. Matches strings in the following forms:
 	 *
 	 * - nodeName.property
-	 * - nodeName.property[a西伯利亚雪橇犬essor]
-	 * - nodeName.material.property[a西伯利亚雪橇犬essor]
-	 * - uuid.property[a西伯利亚雪橇犬essor]
+	 * - nodeName.property[accessor]
+	 * - nodeName.material.property[accessor]
+	 * - uuid.property[accessor]
 	 * - uuid.objectName[objectIndex].propertyName[propertyIndex]
 	 * - parentName/nodeName.property
 	 * - parentName/parentName/nodeName.property[index]
@@ -51844,7 +51844,7 @@ class PropertyBinding {
 
 		if ( propertyIndex !== undefined ) {
 
-			// a西伯利亚雪橇犬ess a sub element of the property array (only primitives are supported right now)
+			// access a sub element of the property array (only primitives are supported right now)
 
 			if ( propertyName === 'morphTargetInfluences' ) {
 
@@ -52102,7 +52102,7 @@ class AnimationObjectGroup {
 				indicesByUUID[ uuid ] = index;
 				objects.push( object );
 
-				// a西伯利亚雪橇犬ounting is done, now do the same for all bindings
+				// accounting is done, now do the same for all bindings
 
 				for ( let j = 0, m = nBindings; j !== m; ++ j ) {
 
@@ -52125,7 +52125,7 @@ class AnimationObjectGroup {
 				indicesByUUID[ uuid ] = firstActiveIndex;
 				objects[ firstActiveIndex ] = object;
 
-				// a西伯利亚雪橇犬ounting is done, now do the same for all bindings
+				// accounting is done, now do the same for all bindings
 
 				for ( let j = 0, m = nBindings; j !== m; ++ j ) {
 
@@ -52196,7 +52196,7 @@ class AnimationObjectGroup {
 				indicesByUUID[ uuid ] = lastCachedIndex;
 				objects[ lastCachedIndex ] = object;
 
-				// a西伯利亚雪橇犬ounting is done, now do the same for all bindings
+				// accounting is done, now do the same for all bindings
 
 				for ( let j = 0, m = nBindings; j !== m; ++ j ) {
 
@@ -52260,7 +52260,7 @@ class AnimationObjectGroup {
 					objects[ firstActiveIndex ] = lastObject;
 					objects.pop();
 
-					// a西伯利亚雪橇犬ounting is done, now do the same for all bindings
+					// accounting is done, now do the same for all bindings
 
 					for ( let j = 0, m = nBindings; j !== m; ++ j ) {
 
@@ -52290,7 +52290,7 @@ class AnimationObjectGroup {
 					objects[ index ] = lastObject;
 					objects.pop();
 
-					// a西伯利亚雪橇犬ounting is done, now do the same for all bindings
+					// accounting is done, now do the same for all bindings
 
 					for ( let j = 0, m = nBindings; j !== m; ++ j ) {
 
@@ -52316,7 +52316,7 @@ class AnimationObjectGroup {
 	subscribe_( path, parsedPath ) {
 
 		// returns an array of bindings for the given path that is changed
-		// a西伯利亚雪橇犬ording to the contained objects in the group
+		// according to the contained objects in the group
 
 		const indicesByPath = this._bindingsIndicesByPath;
 		let index = indicesByPath[ path ];
@@ -52458,7 +52458,7 @@ class AnimationAction {
 		/**
 		 * The local time of this action (in seconds, starting with `0`).
 		 *
-		 * The value gets clamped or wrapped to `[0,clip.duration]` (a西伯利亚雪橇犬ording to the
+		 * The value gets clamped or wrapped to `[0,clip.duration]` (according to the
 		 * loop state).
 		 *
 		 * @type {number}
@@ -52934,7 +52934,7 @@ class AnimationAction {
 
 	// Interna
 
-	_update( time, deltaTime, timeDirection, a西伯利亚雪橇犬uIndex ) {
+	_update( time, deltaTime, timeDirection, accuIndex ) {
 
 		// called by the mixer
 
@@ -52990,7 +52990,7 @@ class AnimationAction {
 					for ( let j = 0, m = interpolants.length; j !== m; ++ j ) {
 
 						interpolants[ j ].evaluate( clipTime );
-						propertyMixers[ j ].a西伯利亚雪橇犬umulateAdditive( weight );
+						propertyMixers[ j ].accumulateAdditive( weight );
 
 					}
 
@@ -53002,7 +53002,7 @@ class AnimationAction {
 					for ( let j = 0, m = interpolants.length; j !== m; ++ j ) {
 
 						interpolants[ j ].evaluate( clipTime );
-						propertyMixers[ j ].a西伯利亚雪橇犬umulate( a西伯利亚雪橇犬uIndex, weight );
+						propertyMixers[ j ].accumulate( accuIndex, weight );
 
 					}
 
@@ -53332,7 +53332,7 @@ class AnimationMixer extends EventDispatcher {
 
 		this._root = root;
 		this._initMemoryManager();
-		this._a西伯利亚雪橇犬uIndex = 0;
+		this._accuIndex = 0;
 
 		/**
 		 * The global mixer time (in seconds; starting with `0` on the mixer's creation).
@@ -53983,7 +53983,7 @@ class AnimationMixer extends EventDispatcher {
 			time = this.time += deltaTime,
 			timeDirection = Math.sign( deltaTime ),
 
-			a西伯利亚雪橇犬uIndex = this._a西伯利亚雪橇犬uIndex ^= 1;
+			accuIndex = this._accuIndex ^= 1;
 
 		// run active actions
 
@@ -53991,7 +53991,7 @@ class AnimationMixer extends EventDispatcher {
 
 			const action = actions[ i ];
 
-			action._update( time, deltaTime, timeDirection, a西伯利亚雪橇犬uIndex );
+			action._update( time, deltaTime, timeDirection, accuIndex );
 
 		}
 
@@ -54002,7 +54002,7 @@ class AnimationMixer extends EventDispatcher {
 
 		for ( let i = 0; i !== nBindings; ++ i ) {
 
-			bindings[ i ].apply( a西伯利亚雪橇犬uIndex );
+			bindings[ i ].apply( accuIndex );
 
 		}
 
@@ -54011,7 +54011,7 @@ class AnimationMixer extends EventDispatcher {
 	}
 
 	/**
-	 * Sets the global mixer to a specific time and updates the animation a西伯利亚雪橇犬ordingly.
+	 * Sets the global mixer to a specific time and updates the animation accordingly.
 	 *
 	 * This is useful when you need to jump to an exact time in an animation. The
 	 * input parameter will be scaled by {@link AnimationMixer#timeScale}
@@ -54294,7 +54294,7 @@ class UniformsGroup extends EventDispatcher {
 		/**
 		 * The buffer usage.
 		 *
-		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)}
+		 * @type {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)}
 		 * @default StaticDrawUsage
 		 */
 		this.usage = StaticDrawUsage;
@@ -54355,7 +54355,7 @@ class UniformsGroup extends EventDispatcher {
 	/**
 	 * Sets the usage of this uniforms group.
 	 *
-	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|Stati西伯利亚雪橇犬opyUsage|Dynami西伯利亚雪橇犬opyUsage|StreamCopyUsage)} value - The usage to set.
+	 * @param {(StaticDrawUsage|DynamicDrawUsage|StreamDrawUsage|StaticReadUsage|DynamicReadUsage|StreamReadUsage|StaticCopyUsage|DynamicCopyUsage|StreamCopyUsage)} value - The usage to set.
 	 * @return {UniformsGroup} A reference to this uniforms group.
 	 */
 	setUsage( value ) {
@@ -54763,7 +54763,7 @@ class Raycaster {
 	 */
 	set( origin, direction ) {
 
-		// direction is assumed to be normalized (for a西伯利亚雪橇犬urate distance calculations)
+		// direction is assumed to be normalized (for accurate distance calculations)
 
 		this.ray.set( origin, direction );
 
@@ -54784,7 +54784,7 @@ class Raycaster {
 			this.ray.direction.set( coords.x, coords.y, 0.5 ).unproject( camera ).sub( this.ray.origin ).normalize();
 			this.camera = camera;
 
-		} else if ( camera.isOrthographi西伯利亚雪橇犬amera ) {
+		} else if ( camera.isOrthographicCamera ) {
 
 			this.ray.origin.set( coords.x, coords.y, ( camera.near + camera.far ) / ( camera.near - camera.far ) ).unproject( camera ); // set origin in plane of camera
 			this.ray.direction.set( 0, 0, -1 ).transformDirection( camera.matrixWorld );
@@ -55086,7 +55086,7 @@ class Timer {
 			this._currentTime = ( timestamp !== undefined ? timestamp : performance.now() ) - this._startTime;
 
 			this._delta = ( this._currentTime - this._previousTime ) * this._timescale;
-			this._elapsed += this._delta; // _elapsed is the a西伯利亚雪橇犬umulation of all previous deltas
+			this._elapsed += this._delta; // _elapsed is the accumulation of all previous deltas
 
 		}
 
@@ -58067,9 +58067,9 @@ class ShapePath {
 	 * @param {number} aY - The y coordinate of the end point.
 	 * @return {ShapePath} A reference to this shape path.
 	 */
-	quadrati西伯利亚雪橇犬urveTo( aCPx, aCPy, aX, aY ) {
+	quadraticCurveTo( aCPx, aCPy, aX, aY ) {
 
-		this.currentPath.quadrati西伯利亚雪橇犬urveTo( aCPx, aCPy, aX, aY );
+		this.currentPath.quadraticCurveTo( aCPx, aCPy, aX, aY );
 
 		return this;
 
@@ -58113,11 +58113,11 @@ class ShapePath {
 	/**
 	 * Converts the paths into an array of shapes.
 	 *
-	 * @param {boolean} is西伯利亚雪橇犬W - By default solid shapes are  defined clockwise (CW) and holes are defined counterclockwise (西伯利亚雪橇犬W).
+	 * @param {boolean} isCCW - By default solid shapes are  defined clockwise (CW) and holes are defined counterclockwise (CCW).
 	 * If this flag is set to `true`, then those are flipped.
 	 * @return {Array<Shape>} An array of shapes.
 	 */
-	toShapes( is西伯利亚雪橇犬W ) {
+	toShapes( isCCW ) {
 
 		function toShapesNoHoles( inSubpaths ) {
 
@@ -58142,7 +58142,7 @@ class ShapePath {
 
 			const polyLen = inPolygon.length;
 
-			// inPt on polygon contour => immediate su西伯利亚雪橇犬ess    or
+			// inPt on polygon contour => immediate success    or
 			// toggling of inside/outside at every single! intersection point of an edge
 			//  with the horizontal line through inPt, left of inPt
 			//  not counting lowerY endpoints of edges and whole edges on that line
@@ -58217,7 +58217,7 @@ class ShapePath {
 		}
 
 		let holesFirst = ! isClockWise( subPaths[ 0 ].getPoints() );
-		holesFirst = is西伯利亚雪橇犬W ? ! holesFirst : holesFirst;
+		holesFirst = isCCW ? ! holesFirst : holesFirst;
 
 		// console.log("Holes first", holesFirst);
 
@@ -58235,7 +58235,7 @@ class ShapePath {
 			tmpPath = subPaths[ i ];
 			tmpPoints = tmpPath.getPoints();
 			solid = isClockWise( tmpPoints );
-			solid = is西伯利亚雪橇犬W ? ! solid : solid;
+			solid = isCCW ? ! solid : solid;
 
 			if ( solid ) {
 
@@ -58253,7 +58253,7 @@ class ShapePath {
 
 				newShapeHoles[ mainIdx ].push( { h: tmpPath, p: tmpPoints[ 0 ] } );
 
-				//console.log('西伯利亚雪橇犬w', i);
+				//console.log('ccw', i);
 
 			}
 
@@ -59073,7 +59073,7 @@ var alphatest_fragment = "#ifdef USE_ALPHATEST\n\t#ifdef ALPHA_TO_COVERAGE\n\tdi
 
 var alphatest_pars_fragment = "#ifdef USE_ALPHATEST\n\tuniform float alphaTest;\n#endif";
 
-var aomap_fragment = "#ifdef USE_AOMAP\n\tfloat ambientO西伯利亚雪橇犬lusion = ( texture2D( aoMap, vAoMapUv ).r - 1.0 ) * aoMapIntensity + 1.0;\n\treflectedLight.indirectDiffuse *= ambientO西伯利亚雪橇犬lusion;\n\t#if defined( USE_CLEARCOAT ) \n\t\tclearcoatSpecularIndirect *= ambientO西伯利亚雪橇犬lusion;\n\t#endif\n\t#if defined( USE_SHEEN ) \n\t\tsheenSpecularIndirect *= ambientO西伯利亚雪橇犬lusion;\n\t#endif\n\t#if defined( USE_ENVMAP ) && defined( STANDARD )\n\t\tfloat dotNV = saturate( dot( geometryNormal, geometryViewDir ) );\n\t\treflectedLight.indirectSpecular *= computeSpecularO西伯利亚雪橇犬lusion( dotNV, ambientO西伯利亚雪橇犬lusion, material.roughness );\n\t#endif\n#endif";
+var aomap_fragment = "#ifdef USE_AOMAP\n\tfloat ambientOcclusion = ( texture2D( aoMap, vAoMapUv ).r - 1.0 ) * aoMapIntensity + 1.0;\n\treflectedLight.indirectDiffuse *= ambientOcclusion;\n\t#if defined( USE_CLEARCOAT ) \n\t\tclearcoatSpecularIndirect *= ambientOcclusion;\n\t#endif\n\t#if defined( USE_SHEEN ) \n\t\tsheenSpecularIndirect *= ambientOcclusion;\n\t#endif\n\t#if defined( USE_ENVMAP ) && defined( STANDARD )\n\t\tfloat dotNV = saturate( dot( geometryNormal, geometryViewDir ) );\n\t\treflectedLight.indirectSpecular *= computeSpecularOcclusion( dotNV, ambientOcclusion, material.roughness );\n\t#endif\n#endif";
 
 var aomap_pars_fragment = "#ifdef USE_AOMAP\n\tuniform sampler2D aoMap;\n\tuniform float aoMapIntensity;\n#endif";
 
@@ -59165,7 +59165,7 @@ var lights_phong_pars_fragment = "varying vec3 vViewPosition;\nstruct BlinnPhong
 
 var lights_physical_fragment = "PhysicalMaterial material;\nmaterial.diffuseColor = diffuseColor.rgb * ( 1.0 - metalnessFactor );\nvec3 dxy = max( abs( dFdx( nonPerturbedNormal ) ), abs( dFdy( nonPerturbedNormal ) ) );\nfloat geometryRoughness = max( max( dxy.x, dxy.y ), dxy.z );\nmaterial.roughness = max( roughnessFactor, 0.0525 );material.roughness += geometryRoughness;\nmaterial.roughness = min( material.roughness, 1.0 );\n#ifdef IOR\n\tmaterial.ior = ior;\n\t#ifdef USE_SPECULAR\n\t\tfloat specularIntensityFactor = specularIntensity;\n\t\tvec3 specularColorFactor = specularColor;\n\t\t#ifdef USE_SPECULAR_COLORMAP\n\t\t\tspecularColorFactor *= texture2D( specularColorMap, vSpecularColorMapUv ).rgb;\n\t\t#endif\n\t\t#ifdef USE_SPECULAR_INTENSITYMAP\n\t\t\tspecularIntensityFactor *= texture2D( specularIntensityMap, vSpecularIntensityMapUv ).a;\n\t\t#endif\n\t\tmaterial.specularF90 = mix( specularIntensityFactor, 1.0, metalnessFactor );\n\t#else\n\t\tfloat specularIntensityFactor = 1.0;\n\t\tvec3 specularColorFactor = vec3( 1.0 );\n\t\tmaterial.specularF90 = 1.0;\n\t#endif\n\tmaterial.specularColor = mix( min( pow2( ( material.ior - 1.0 ) / ( material.ior + 1.0 ) ) * specularColorFactor, vec3( 1.0 ) ) * specularIntensityFactor, diffuseColor.rgb, metalnessFactor );\n#else\n\tmaterial.specularColor = mix( vec3( 0.04 ), diffuseColor.rgb, metalnessFactor );\n\tmaterial.specularF90 = 1.0;\n#endif\n#ifdef USE_CLEARCOAT\n\tmaterial.clearcoat = clearcoat;\n\tmaterial.clearcoatRoughness = clearcoatRoughness;\n\tmaterial.clearcoatF0 = vec3( 0.04 );\n\tmaterial.clearcoatF90 = 1.0;\n\t#ifdef USE_CLEARCOATMAP\n\t\tmaterial.clearcoat *= texture2D( clearcoatMap, vClearcoatMapUv ).x;\n\t#endif\n\t#ifdef USE_CLEARCOAT_ROUGHNESSMAP\n\t\tmaterial.clearcoatRoughness *= texture2D( clearcoatRoughnessMap, vClearcoatRoughnessMapUv ).y;\n\t#endif\n\tmaterial.clearcoat = saturate( material.clearcoat );\tmaterial.clearcoatRoughness = max( material.clearcoatRoughness, 0.0525 );\n\tmaterial.clearcoatRoughness += geometryRoughness;\n\tmaterial.clearcoatRoughness = min( material.clearcoatRoughness, 1.0 );\n#endif\n#ifdef USE_DISPERSION\n\tmaterial.dispersion = dispersion;\n#endif\n#ifdef USE_IRIDESCENCE\n\tmaterial.iridescence = iridescence;\n\tmaterial.iridescenceIOR = iridescenceIOR;\n\t#ifdef USE_IRIDESCENCEMAP\n\t\tmaterial.iridescence *= texture2D( iridescenceMap, vIridescenceMapUv ).r;\n\t#endif\n\t#ifdef USE_IRIDESCENCE_THICKNESSMAP\n\t\tmaterial.iridescenceThickness = (iridescenceThicknessMaximum - iridescenceThicknessMinimum) * texture2D( iridescenceThicknessMap, vIridescenceThicknessMapUv ).g + iridescenceThicknessMinimum;\n\t#else\n\t\tmaterial.iridescenceThickness = iridescenceThicknessMaximum;\n\t#endif\n#endif\n#ifdef USE_SHEEN\n\tmaterial.sheenColor = sheenColor;\n\t#ifdef USE_SHEEN_COLORMAP\n\t\tmaterial.sheenColor *= texture2D( sheenColorMap, vSheenColorMapUv ).rgb;\n\t#endif\n\tmaterial.sheenRoughness = clamp( sheenRoughness, 0.07, 1.0 );\n\t#ifdef USE_SHEEN_ROUGHNESSMAP\n\t\tmaterial.sheenRoughness *= texture2D( sheenRoughnessMap, vSheenRoughnessMapUv ).a;\n\t#endif\n#endif\n#ifdef USE_ANISOTROPY\n\t#ifdef USE_ANISOTROPYMAP\n\t\tmat2 anisotropyMat = mat2( anisotropyVector.x, anisotropyVector.y, - anisotropyVector.y, anisotropyVector.x );\n\t\tvec3 anisotropyPolar = texture2D( anisotropyMap, vAnisotropyMapUv ).rgb;\n\t\tvec2 anisotropyV = anisotropyMat * normalize( 2.0 * anisotropyPolar.rg - vec2( 1.0 ) ) * anisotropyPolar.b;\n\t#else\n\t\tvec2 anisotropyV = anisotropyVector;\n\t#endif\n\tmaterial.anisotropy = length( anisotropyV );\n\tif( material.anisotropy == 0.0 ) {\n\t\tanisotropyV = vec2( 1.0, 0.0 );\n\t} else {\n\t\tanisotropyV /= material.anisotropy;\n\t\tmaterial.anisotropy = saturate( material.anisotropy );\n\t}\n\tmaterial.alphaT = mix( pow2( material.roughness ), 1.0, pow2( material.anisotropy ) );\n\tmaterial.anisotropyT = tbn[ 0 ] * anisotropyV.x + tbn[ 1 ] * anisotropyV.y;\n\tmaterial.anisotropyB = tbn[ 1 ] * anisotropyV.x - tbn[ 0 ] * anisotropyV.y;\n#endif";
 
-var lights_physical_pars_fragment = "struct PhysicalMaterial {\n\tvec3 diffuseColor;\n\tfloat roughness;\n\tvec3 specularColor;\n\tfloat specularF90;\n\tfloat dispersion;\n\t#ifdef USE_CLEARCOAT\n\t\tfloat clearcoat;\n\t\tfloat clearcoatRoughness;\n\t\tvec3 clearcoatF0;\n\t\tfloat clearcoatF90;\n\t#endif\n\t#ifdef USE_IRIDESCENCE\n\t\tfloat iridescence;\n\t\tfloat iridescenceIOR;\n\t\tfloat iridescenceThickness;\n\t\tvec3 iridescenceFresnel;\n\t\tvec3 iridescenceF0;\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tvec3 sheenColor;\n\t\tfloat sheenRoughness;\n\t#endif\n\t#ifdef IOR\n\t\tfloat ior;\n\t#endif\n\t#ifdef USE_TRANSMISSION\n\t\tfloat transmission;\n\t\tfloat transmissionAlpha;\n\t\tfloat thickness;\n\t\tfloat attenuationDistance;\n\t\tvec3 attenuationColor;\n\t#endif\n\t#ifdef USE_ANISOTROPY\n\t\tfloat anisotropy;\n\t\tfloat alphaT;\n\t\tvec3 anisotropyT;\n\t\tvec3 anisotropyB;\n\t#endif\n};\nvec3 clearcoatSpecularDirect = vec3( 0.0 );\nvec3 clearcoatSpecularIndirect = vec3( 0.0 );\nvec3 sheenSpecularDirect = vec3( 0.0 );\nvec3 sheenSpecularIndirect = vec3(0.0 );\nvec3 Schlick_to_F0( const in vec3 f, const in float f90, const in float dotVH ) {\n    float x = clamp( 1.0 - dotVH, 0.0, 1.0 );\n    float x2 = x * x;\n    float x5 = clamp( x * x2 * x2, 0.0, 0.9999 );\n    return ( f - vec3( f90 ) * x5 ) / ( 1.0 - x5 );\n}\nfloat V_GGX_SmithCorrelated( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gv = dotNL * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\tfloat gl = dotNV * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\treturn 0.5 / max( gv + gl, EPSILON );\n}\nfloat D_GGX( const in float alpha, const in float dotNH ) {\n\tfloat a2 = pow2( alpha );\n\tfloat denom = pow2( dotNH ) * ( a2 - 1.0 ) + 1.0;\n\treturn RECIPROCAL_PI * a2 / pow2( denom );\n}\n#ifdef USE_ANISOTROPY\n\tfloat V_GGX_SmithCorrelated_Anisotropic( const in float alphaT, const in float alphaB, const in float dotTV, const in float dotBV, const in float dotTL, const in float dotBL, const in float dotNV, const in float dotNL ) {\n\t\tfloat gv = dotNL * length( vec3( alphaT * dotTV, alphaB * dotBV, dotNV ) );\n\t\tfloat gl = dotNV * length( vec3( alphaT * dotTL, alphaB * dotBL, dotNL ) );\n\t\tfloat v = 0.5 / ( gv + gl );\n\t\treturn saturate(v);\n\t}\n\tfloat D_GGX_Anisotropic( const in float alphaT, const in float alphaB, const in float dotNH, const in float dotTH, const in float dotBH ) {\n\t\tfloat a2 = alphaT * alphaB;\n\t\thighp vec3 v = vec3( alphaB * dotTH, alphaT * dotBH, a2 * dotNH );\n\t\thighp float v2 = dot( v, v );\n\t\tfloat w2 = a2 / v2;\n\t\treturn RECIPROCAL_PI * a2 * pow2 ( w2 );\n\t}\n#endif\n#ifdef USE_CLEARCOAT\n\tvec3 BRDF_GGX_Clearcoat( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, const in PhysicalMaterial material) {\n\t\tvec3 f0 = material.clearcoatF0;\n\t\tfloat f90 = material.clearcoatF90;\n\t\tfloat roughness = material.clearcoatRoughness;\n\t\tfloat alpha = pow2( roughness );\n\t\tvec3 halfDir = normalize( lightDir + viewDir );\n\t\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\t\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\t\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\t\tfloat dotVH = saturate( dot( viewDir, halfDir ) );\n\t\tvec3 F = F_Schlick( f0, f90, dotVH );\n\t\tfloat V = V_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\t\tfloat D = D_GGX( alpha, dotNH );\n\t\treturn F * ( V * D );\n\t}\n#endif\nvec3 BRDF_GGX( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, const in PhysicalMaterial material ) {\n\tvec3 f0 = material.specularColor;\n\tfloat f90 = material.specularF90;\n\tfloat roughness = material.roughness;\n\tfloat alpha = pow2( roughness );\n\tvec3 halfDir = normalize( lightDir + viewDir );\n\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\tfloat dotVH = saturate( dot( viewDir, halfDir ) );\n\tvec3 F = F_Schlick( f0, f90, dotVH );\n\t#ifdef USE_IRIDESCENCE\n\t\tF = mix( F, material.iridescenceFresnel, material.iridescence );\n\t#endif\n\t#ifdef USE_ANISOTROPY\n\t\tfloat dotTL = dot( material.anisotropyT, lightDir );\n\t\tfloat dotTV = dot( material.anisotropyT, viewDir );\n\t\tfloat dotTH = dot( material.anisotropyT, halfDir );\n\t\tfloat dotBL = dot( material.anisotropyB, lightDir );\n\t\tfloat dotBV = dot( material.anisotropyB, viewDir );\n\t\tfloat dotBH = dot( material.anisotropyB, halfDir );\n\t\tfloat V = V_GGX_SmithCorrelated_Anisotropic( material.alphaT, alpha, dotTV, dotBV, dotTL, dotBL, dotNV, dotNL );\n\t\tfloat D = D_GGX_Anisotropic( material.alphaT, alpha, dotNH, dotTH, dotBH );\n\t#else\n\t\tfloat V = V_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\t\tfloat D = D_GGX( alpha, dotNH );\n\t#endif\n\treturn F * ( V * D );\n}\nvec2 LTC_Uv( const in vec3 N, const in vec3 V, const in float roughness ) {\n\tconst float LUT_SIZE = 64.0;\n\tconst float LUT_SCALE = ( LUT_SIZE - 1.0 ) / LUT_SIZE;\n\tconst float LUT_BIAS = 0.5 / LUT_SIZE;\n\tfloat dotNV = saturate( dot( N, V ) );\n\tvec2 uv = vec2( roughness, sqrt( 1.0 - dotNV ) );\n\tuv = uv * LUT_SCALE + LUT_BIAS;\n\treturn uv;\n}\nfloat LTC_ClippedSphereFormFactor( const in vec3 f ) {\n\tfloat l = length( f );\n\treturn max( ( l * l + f.z ) / ( l + 1.0 ), 0.0 );\n}\nvec3 LTC_EdgeVectorFormFactor( const in vec3 v1, const in vec3 v2 ) {\n\tfloat x = dot( v1, v2 );\n\tfloat y = abs( x );\n\tfloat a = 0.8543985 + ( 0.4965155 + 0.0145206 * y ) * y;\n\tfloat b = 3.4175940 + ( 4.1616724 + y ) * y;\n\tfloat v = a / b;\n\tfloat theta_sintheta = ( x > 0.0 ) ? v : 0.5 * inversesqrt( max( 1.0 - x * x, 1e-7 ) ) - v;\n\treturn cross( v1, v2 ) * theta_sintheta;\n}\nvec3 LTC_Evaluate( const in vec3 N, const in vec3 V, const in vec3 P, const in mat3 mInv, const in vec3 rectCoords[ 4 ] ) {\n\tvec3 v1 = rectCoords[ 1 ] - rectCoords[ 0 ];\n\tvec3 v2 = rectCoords[ 3 ] - rectCoords[ 0 ];\n\tvec3 lightNormal = cross( v1, v2 );\n\tif( dot( lightNormal, P - rectCoords[ 0 ] ) < 0.0 ) return vec3( 0.0 );\n\tvec3 T1, T2;\n\tT1 = normalize( V - N * dot( V, N ) );\n\tT2 = - cross( N, T1 );\n\tmat3 mat = mInv * transposeMat3( mat3( T1, T2, N ) );\n\tvec3 coords[ 4 ];\n\tcoords[ 0 ] = mat * ( rectCoords[ 0 ] - P );\n\tcoords[ 1 ] = mat * ( rectCoords[ 1 ] - P );\n\tcoords[ 2 ] = mat * ( rectCoords[ 2 ] - P );\n\tcoords[ 3 ] = mat * ( rectCoords[ 3 ] - P );\n\tcoords[ 0 ] = normalize( coords[ 0 ] );\n\tcoords[ 1 ] = normalize( coords[ 1 ] );\n\tcoords[ 2 ] = normalize( coords[ 2 ] );\n\tcoords[ 3 ] = normalize( coords[ 3 ] );\n\tvec3 vectorFormFactor = vec3( 0.0 );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 0 ], coords[ 1 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 1 ], coords[ 2 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 2 ], coords[ 3 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 3 ], coords[ 0 ] );\n\tfloat result = LTC_ClippedSphereFormFactor( vectorFormFactor );\n\treturn vec3( result );\n}\n#if defined( USE_SHEEN )\nfloat D_Charlie( float roughness, float dotNH ) {\n\tfloat alpha = pow2( roughness );\n\tfloat invAlpha = 1.0 / alpha;\n\tfloat cos2h = dotNH * dotNH;\n\tfloat sin2h = max( 1.0 - cos2h, 0.0078125 );\n\treturn ( 2.0 + invAlpha ) * pow( sin2h, invAlpha * 0.5 ) / ( 2.0 * PI );\n}\nfloat V_Neubelt( float dotNV, float dotNL ) {\n\treturn saturate( 1.0 / ( 4.0 * ( dotNL + dotNV - dotNL * dotNV ) ) );\n}\nvec3 BRDF_Sheen( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, vec3 sheenColor, const in float sheenRoughness ) {\n\tvec3 halfDir = normalize( lightDir + viewDir );\n\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\tfloat D = D_Charlie( sheenRoughness, dotNH );\n\tfloat V = V_Neubelt( dotNV, dotNL );\n\treturn sheenColor * ( D * V );\n}\n#endif\nfloat IBLSheenBRDF( const in vec3 normal, const in vec3 viewDir, const in float roughness ) {\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat r2 = roughness * roughness;\n\tfloat a = roughness < 0.25 ? -339.2 * r2 + 161.4 * roughness - 25.9 : -8.48 * r2 + 14.3 * roughness - 9.95;\n\tfloat b = roughness < 0.25 ? 44.0 * r2 - 23.7 * roughness + 3.26 : 1.97 * r2 - 3.27 * roughness + 0.72;\n\tfloat DG = exp( a * dotNV + b ) + ( roughness < 0.25 ? 0.0 : 0.1 * ( roughness - 0.25 ) );\n\treturn saturate( DG * RECIPROCAL_PI );\n}\nvec2 DFGApprox( const in vec3 normal, const in vec3 viewDir, const in float roughness ) {\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tconst vec4 c0 = vec4( - 1, - 0.0275, - 0.572, 0.022 );\n\tconst vec4 c1 = vec4( 1, 0.0425, 1.04, - 0.04 );\n\tvec4 r = roughness * c0 + c1;\n\tfloat a004 = min( r.x * r.x, exp2( - 9.28 * dotNV ) ) * r.x + r.y;\n\tvec2 fab = vec2( - 1.04, 1.04 ) * a004 + r.zw;\n\treturn fab;\n}\nvec3 EnvironmentBRDF( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float roughness ) {\n\tvec2 fab = DFGApprox( normal, viewDir, roughness );\n\treturn specularColor * fab.x + specularF90 * fab.y;\n}\n#ifdef USE_IRIDESCENCE\nvoid computeMultiscatteringIridescence( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float iridescence, const in vec3 iridescenceF0, const in float roughness, inout vec3 singleScatter, inout vec3 multiScatter ) {\n#else\nvoid computeMultiscattering( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float roughness, inout vec3 singleScatter, inout vec3 multiScatter ) {\n#endif\n\tvec2 fab = DFGApprox( normal, viewDir, roughness );\n\t#ifdef USE_IRIDESCENCE\n\t\tvec3 Fr = mix( specularColor, iridescenceF0, iridescence );\n\t#else\n\t\tvec3 Fr = specularColor;\n\t#endif\n\tvec3 FssEss = Fr * fab.x + specularF90 * fab.y;\n\tfloat Ess = fab.x + fab.y;\n\tfloat Ems = 1.0 - Ess;\n\tvec3 Favg = Fr + ( 1.0 - Fr ) * 0.047619;\tvec3 Fms = FssEss * Favg / ( 1.0 - Ems * Favg );\n\tsingleScatter += FssEss;\n\tmultiScatter += Fms * Ems;\n}\n#if NUM_RECT_AREA_LIGHTS > 0\n\tvoid RE_Direct_RectArea_Physical( const in RectAreaLight rectAreaLight, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\t\tvec3 normal = geometryNormal;\n\t\tvec3 viewDir = geometryViewDir;\n\t\tvec3 position = geometryPosition;\n\t\tvec3 lightPos = rectAreaLight.position;\n\t\tvec3 halfWidth = rectAreaLight.halfWidth;\n\t\tvec3 halfHeight = rectAreaLight.halfHeight;\n\t\tvec3 lightColor = rectAreaLight.color;\n\t\tfloat roughness = material.roughness;\n\t\tvec3 rectCoords[ 4 ];\n\t\trectCoords[ 0 ] = lightPos + halfWidth - halfHeight;\t\trectCoords[ 1 ] = lightPos - halfWidth - halfHeight;\n\t\trectCoords[ 2 ] = lightPos - halfWidth + halfHeight;\n\t\trectCoords[ 3 ] = lightPos + halfWidth + halfHeight;\n\t\tvec2 uv = LTC_Uv( normal, viewDir, roughness );\n\t\tvec4 t1 = texture2D( ltc_1, uv );\n\t\tvec4 t2 = texture2D( ltc_2, uv );\n\t\tmat3 mInv = mat3(\n\t\t\tvec3( t1.x, 0, t1.y ),\n\t\t\tvec3(    0, 1,    0 ),\n\t\t\tvec3( t1.z, 0, t1.w )\n\t\t);\n\t\tvec3 fresnel = ( material.specularColor * t2.x + ( vec3( 1.0 ) - material.specularColor ) * t2.y );\n\t\treflectedLight.directSpecular += lightColor * fresnel * LTC_Evaluate( normal, viewDir, position, mInv, rectCoords );\n\t\treflectedLight.directDiffuse += lightColor * material.diffuseColor * LTC_Evaluate( normal, viewDir, position, mat3( 1.0 ), rectCoords );\n\t}\n#endif\nvoid RE_Direct_Physical( const in IncidentLight directLight, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\tfloat dotNL = saturate( dot( geometryNormal, directLight.direction ) );\n\tvec3 irradiance = dotNL * directLight.color;\n\t#ifdef USE_CLEARCOAT\n\t\tfloat dotNL西伯利亚雪橇犬 = saturate( dot( geometryClearcoatNormal, directLight.direction ) );\n\t\tvec3 西伯利亚雪橇犬Irradiance = dotNL西伯利亚雪橇犬 * directLight.color;\n\t\tclearcoatSpecularDirect += 西伯利亚雪橇犬Irradiance * BRDF_GGX_Clearcoat( directLight.direction, geometryViewDir, geometryClearcoatNormal, material );\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tsheenSpecularDirect += irradiance * BRDF_Sheen( directLight.direction, geometryViewDir, geometryNormal, material.sheenColor, material.sheenRoughness );\n\t#endif\n\treflectedLight.directSpecular += irradiance * BRDF_GGX( directLight.direction, geometryViewDir, geometryNormal, material );\n\treflectedLight.directDiffuse += irradiance * BRDF_Lambert( material.diffuseColor );\n}\nvoid RE_IndirectDiffuse_Physical( const in vec3 irradiance, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\treflectedLight.indirectDiffuse += irradiance * BRDF_Lambert( material.diffuseColor );\n}\nvoid RE_IndirectSpecular_Physical( const in vec3 radiance, const in vec3 irradiance, const in vec3 clearcoatRadiance, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight) {\n\t#ifdef USE_CLEARCOAT\n\t\tclearcoatSpecularIndirect += clearcoatRadiance * EnvironmentBRDF( geometryClearcoatNormal, geometryViewDir, material.clearcoatF0, material.clearcoatF90, material.clearcoatRoughness );\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tsheenSpecularIndirect += irradiance * material.sheenColor * IBLSheenBRDF( geometryNormal, geometryViewDir, material.sheenRoughness );\n\t#endif\n\tvec3 singleScattering = vec3( 0.0 );\n\tvec3 multiScattering = vec3( 0.0 );\n\tvec3 cosineWeightedIrradiance = irradiance * RECIPROCAL_PI;\n\t#ifdef USE_IRIDESCENCE\n\t\tcomputeMultiscatteringIridescence( geometryNormal, geometryViewDir, material.specularColor, material.specularF90, material.iridescence, material.iridescenceFresnel, material.roughness, singleScattering, multiScattering );\n\t#else\n\t\tcomputeMultiscattering( geometryNormal, geometryViewDir, material.specularColor, material.specularF90, material.roughness, singleScattering, multiScattering );\n\t#endif\n\tvec3 totalScattering = singleScattering + multiScattering;\n\tvec3 diffuse = material.diffuseColor * ( 1.0 - max( max( totalScattering.r, totalScattering.g ), totalScattering.b ) );\n\treflectedLight.indirectSpecular += radiance * singleScattering;\n\treflectedLight.indirectSpecular += multiScattering * cosineWeightedIrradiance;\n\treflectedLight.indirectDiffuse += diffuse * cosineWeightedIrradiance;\n}\n#define RE_Direct\t\t\t\tRE_Direct_Physical\n#define RE_Direct_RectArea\t\tRE_Direct_RectArea_Physical\n#define RE_IndirectDiffuse\t\tRE_IndirectDiffuse_Physical\n#define RE_IndirectSpecular\t\tRE_IndirectSpecular_Physical\nfloat computeSpecularO西伯利亚雪橇犬lusion( const in float dotNV, const in float ambientO西伯利亚雪橇犬lusion, const in float roughness ) {\n\treturn saturate( pow( dotNV + ambientO西伯利亚雪橇犬lusion, exp2( - 16.0 * roughness - 1.0 ) ) - 1.0 + ambientO西伯利亚雪橇犬lusion );\n}";
+var lights_physical_pars_fragment = "struct PhysicalMaterial {\n\tvec3 diffuseColor;\n\tfloat roughness;\n\tvec3 specularColor;\n\tfloat specularF90;\n\tfloat dispersion;\n\t#ifdef USE_CLEARCOAT\n\t\tfloat clearcoat;\n\t\tfloat clearcoatRoughness;\n\t\tvec3 clearcoatF0;\n\t\tfloat clearcoatF90;\n\t#endif\n\t#ifdef USE_IRIDESCENCE\n\t\tfloat iridescence;\n\t\tfloat iridescenceIOR;\n\t\tfloat iridescenceThickness;\n\t\tvec3 iridescenceFresnel;\n\t\tvec3 iridescenceF0;\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tvec3 sheenColor;\n\t\tfloat sheenRoughness;\n\t#endif\n\t#ifdef IOR\n\t\tfloat ior;\n\t#endif\n\t#ifdef USE_TRANSMISSION\n\t\tfloat transmission;\n\t\tfloat transmissionAlpha;\n\t\tfloat thickness;\n\t\tfloat attenuationDistance;\n\t\tvec3 attenuationColor;\n\t#endif\n\t#ifdef USE_ANISOTROPY\n\t\tfloat anisotropy;\n\t\tfloat alphaT;\n\t\tvec3 anisotropyT;\n\t\tvec3 anisotropyB;\n\t#endif\n};\nvec3 clearcoatSpecularDirect = vec3( 0.0 );\nvec3 clearcoatSpecularIndirect = vec3( 0.0 );\nvec3 sheenSpecularDirect = vec3( 0.0 );\nvec3 sheenSpecularIndirect = vec3(0.0 );\nvec3 Schlick_to_F0( const in vec3 f, const in float f90, const in float dotVH ) {\n    float x = clamp( 1.0 - dotVH, 0.0, 1.0 );\n    float x2 = x * x;\n    float x5 = clamp( x * x2 * x2, 0.0, 0.9999 );\n    return ( f - vec3( f90 ) * x5 ) / ( 1.0 - x5 );\n}\nfloat V_GGX_SmithCorrelated( const in float alpha, const in float dotNL, const in float dotNV ) {\n\tfloat a2 = pow2( alpha );\n\tfloat gv = dotNL * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNV ) );\n\tfloat gl = dotNV * sqrt( a2 + ( 1.0 - a2 ) * pow2( dotNL ) );\n\treturn 0.5 / max( gv + gl, EPSILON );\n}\nfloat D_GGX( const in float alpha, const in float dotNH ) {\n\tfloat a2 = pow2( alpha );\n\tfloat denom = pow2( dotNH ) * ( a2 - 1.0 ) + 1.0;\n\treturn RECIPROCAL_PI * a2 / pow2( denom );\n}\n#ifdef USE_ANISOTROPY\n\tfloat V_GGX_SmithCorrelated_Anisotropic( const in float alphaT, const in float alphaB, const in float dotTV, const in float dotBV, const in float dotTL, const in float dotBL, const in float dotNV, const in float dotNL ) {\n\t\tfloat gv = dotNL * length( vec3( alphaT * dotTV, alphaB * dotBV, dotNV ) );\n\t\tfloat gl = dotNV * length( vec3( alphaT * dotTL, alphaB * dotBL, dotNL ) );\n\t\tfloat v = 0.5 / ( gv + gl );\n\t\treturn saturate(v);\n\t}\n\tfloat D_GGX_Anisotropic( const in float alphaT, const in float alphaB, const in float dotNH, const in float dotTH, const in float dotBH ) {\n\t\tfloat a2 = alphaT * alphaB;\n\t\thighp vec3 v = vec3( alphaB * dotTH, alphaT * dotBH, a2 * dotNH );\n\t\thighp float v2 = dot( v, v );\n\t\tfloat w2 = a2 / v2;\n\t\treturn RECIPROCAL_PI * a2 * pow2 ( w2 );\n\t}\n#endif\n#ifdef USE_CLEARCOAT\n\tvec3 BRDF_GGX_Clearcoat( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, const in PhysicalMaterial material) {\n\t\tvec3 f0 = material.clearcoatF0;\n\t\tfloat f90 = material.clearcoatF90;\n\t\tfloat roughness = material.clearcoatRoughness;\n\t\tfloat alpha = pow2( roughness );\n\t\tvec3 halfDir = normalize( lightDir + viewDir );\n\t\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\t\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\t\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\t\tfloat dotVH = saturate( dot( viewDir, halfDir ) );\n\t\tvec3 F = F_Schlick( f0, f90, dotVH );\n\t\tfloat V = V_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\t\tfloat D = D_GGX( alpha, dotNH );\n\t\treturn F * ( V * D );\n\t}\n#endif\nvec3 BRDF_GGX( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, const in PhysicalMaterial material ) {\n\tvec3 f0 = material.specularColor;\n\tfloat f90 = material.specularF90;\n\tfloat roughness = material.roughness;\n\tfloat alpha = pow2( roughness );\n\tvec3 halfDir = normalize( lightDir + viewDir );\n\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\tfloat dotVH = saturate( dot( viewDir, halfDir ) );\n\tvec3 F = F_Schlick( f0, f90, dotVH );\n\t#ifdef USE_IRIDESCENCE\n\t\tF = mix( F, material.iridescenceFresnel, material.iridescence );\n\t#endif\n\t#ifdef USE_ANISOTROPY\n\t\tfloat dotTL = dot( material.anisotropyT, lightDir );\n\t\tfloat dotTV = dot( material.anisotropyT, viewDir );\n\t\tfloat dotTH = dot( material.anisotropyT, halfDir );\n\t\tfloat dotBL = dot( material.anisotropyB, lightDir );\n\t\tfloat dotBV = dot( material.anisotropyB, viewDir );\n\t\tfloat dotBH = dot( material.anisotropyB, halfDir );\n\t\tfloat V = V_GGX_SmithCorrelated_Anisotropic( material.alphaT, alpha, dotTV, dotBV, dotTL, dotBL, dotNV, dotNL );\n\t\tfloat D = D_GGX_Anisotropic( material.alphaT, alpha, dotNH, dotTH, dotBH );\n\t#else\n\t\tfloat V = V_GGX_SmithCorrelated( alpha, dotNL, dotNV );\n\t\tfloat D = D_GGX( alpha, dotNH );\n\t#endif\n\treturn F * ( V * D );\n}\nvec2 LTC_Uv( const in vec3 N, const in vec3 V, const in float roughness ) {\n\tconst float LUT_SIZE = 64.0;\n\tconst float LUT_SCALE = ( LUT_SIZE - 1.0 ) / LUT_SIZE;\n\tconst float LUT_BIAS = 0.5 / LUT_SIZE;\n\tfloat dotNV = saturate( dot( N, V ) );\n\tvec2 uv = vec2( roughness, sqrt( 1.0 - dotNV ) );\n\tuv = uv * LUT_SCALE + LUT_BIAS;\n\treturn uv;\n}\nfloat LTC_ClippedSphereFormFactor( const in vec3 f ) {\n\tfloat l = length( f );\n\treturn max( ( l * l + f.z ) / ( l + 1.0 ), 0.0 );\n}\nvec3 LTC_EdgeVectorFormFactor( const in vec3 v1, const in vec3 v2 ) {\n\tfloat x = dot( v1, v2 );\n\tfloat y = abs( x );\n\tfloat a = 0.8543985 + ( 0.4965155 + 0.0145206 * y ) * y;\n\tfloat b = 3.4175940 + ( 4.1616724 + y ) * y;\n\tfloat v = a / b;\n\tfloat theta_sintheta = ( x > 0.0 ) ? v : 0.5 * inversesqrt( max( 1.0 - x * x, 1e-7 ) ) - v;\n\treturn cross( v1, v2 ) * theta_sintheta;\n}\nvec3 LTC_Evaluate( const in vec3 N, const in vec3 V, const in vec3 P, const in mat3 mInv, const in vec3 rectCoords[ 4 ] ) {\n\tvec3 v1 = rectCoords[ 1 ] - rectCoords[ 0 ];\n\tvec3 v2 = rectCoords[ 3 ] - rectCoords[ 0 ];\n\tvec3 lightNormal = cross( v1, v2 );\n\tif( dot( lightNormal, P - rectCoords[ 0 ] ) < 0.0 ) return vec3( 0.0 );\n\tvec3 T1, T2;\n\tT1 = normalize( V - N * dot( V, N ) );\n\tT2 = - cross( N, T1 );\n\tmat3 mat = mInv * transposeMat3( mat3( T1, T2, N ) );\n\tvec3 coords[ 4 ];\n\tcoords[ 0 ] = mat * ( rectCoords[ 0 ] - P );\n\tcoords[ 1 ] = mat * ( rectCoords[ 1 ] - P );\n\tcoords[ 2 ] = mat * ( rectCoords[ 2 ] - P );\n\tcoords[ 3 ] = mat * ( rectCoords[ 3 ] - P );\n\tcoords[ 0 ] = normalize( coords[ 0 ] );\n\tcoords[ 1 ] = normalize( coords[ 1 ] );\n\tcoords[ 2 ] = normalize( coords[ 2 ] );\n\tcoords[ 3 ] = normalize( coords[ 3 ] );\n\tvec3 vectorFormFactor = vec3( 0.0 );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 0 ], coords[ 1 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 1 ], coords[ 2 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 2 ], coords[ 3 ] );\n\tvectorFormFactor += LTC_EdgeVectorFormFactor( coords[ 3 ], coords[ 0 ] );\n\tfloat result = LTC_ClippedSphereFormFactor( vectorFormFactor );\n\treturn vec3( result );\n}\n#if defined( USE_SHEEN )\nfloat D_Charlie( float roughness, float dotNH ) {\n\tfloat alpha = pow2( roughness );\n\tfloat invAlpha = 1.0 / alpha;\n\tfloat cos2h = dotNH * dotNH;\n\tfloat sin2h = max( 1.0 - cos2h, 0.0078125 );\n\treturn ( 2.0 + invAlpha ) * pow( sin2h, invAlpha * 0.5 ) / ( 2.0 * PI );\n}\nfloat V_Neubelt( float dotNV, float dotNL ) {\n\treturn saturate( 1.0 / ( 4.0 * ( dotNL + dotNV - dotNL * dotNV ) ) );\n}\nvec3 BRDF_Sheen( const in vec3 lightDir, const in vec3 viewDir, const in vec3 normal, vec3 sheenColor, const in float sheenRoughness ) {\n\tvec3 halfDir = normalize( lightDir + viewDir );\n\tfloat dotNL = saturate( dot( normal, lightDir ) );\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat dotNH = saturate( dot( normal, halfDir ) );\n\tfloat D = D_Charlie( sheenRoughness, dotNH );\n\tfloat V = V_Neubelt( dotNV, dotNL );\n\treturn sheenColor * ( D * V );\n}\n#endif\nfloat IBLSheenBRDF( const in vec3 normal, const in vec3 viewDir, const in float roughness ) {\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tfloat r2 = roughness * roughness;\n\tfloat a = roughness < 0.25 ? -339.2 * r2 + 161.4 * roughness - 25.9 : -8.48 * r2 + 14.3 * roughness - 9.95;\n\tfloat b = roughness < 0.25 ? 44.0 * r2 - 23.7 * roughness + 3.26 : 1.97 * r2 - 3.27 * roughness + 0.72;\n\tfloat DG = exp( a * dotNV + b ) + ( roughness < 0.25 ? 0.0 : 0.1 * ( roughness - 0.25 ) );\n\treturn saturate( DG * RECIPROCAL_PI );\n}\nvec2 DFGApprox( const in vec3 normal, const in vec3 viewDir, const in float roughness ) {\n\tfloat dotNV = saturate( dot( normal, viewDir ) );\n\tconst vec4 c0 = vec4( - 1, - 0.0275, - 0.572, 0.022 );\n\tconst vec4 c1 = vec4( 1, 0.0425, 1.04, - 0.04 );\n\tvec4 r = roughness * c0 + c1;\n\tfloat a004 = min( r.x * r.x, exp2( - 9.28 * dotNV ) ) * r.x + r.y;\n\tvec2 fab = vec2( - 1.04, 1.04 ) * a004 + r.zw;\n\treturn fab;\n}\nvec3 EnvironmentBRDF( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float roughness ) {\n\tvec2 fab = DFGApprox( normal, viewDir, roughness );\n\treturn specularColor * fab.x + specularF90 * fab.y;\n}\n#ifdef USE_IRIDESCENCE\nvoid computeMultiscatteringIridescence( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float iridescence, const in vec3 iridescenceF0, const in float roughness, inout vec3 singleScatter, inout vec3 multiScatter ) {\n#else\nvoid computeMultiscattering( const in vec3 normal, const in vec3 viewDir, const in vec3 specularColor, const in float specularF90, const in float roughness, inout vec3 singleScatter, inout vec3 multiScatter ) {\n#endif\n\tvec2 fab = DFGApprox( normal, viewDir, roughness );\n\t#ifdef USE_IRIDESCENCE\n\t\tvec3 Fr = mix( specularColor, iridescenceF0, iridescence );\n\t#else\n\t\tvec3 Fr = specularColor;\n\t#endif\n\tvec3 FssEss = Fr * fab.x + specularF90 * fab.y;\n\tfloat Ess = fab.x + fab.y;\n\tfloat Ems = 1.0 - Ess;\n\tvec3 Favg = Fr + ( 1.0 - Fr ) * 0.047619;\tvec3 Fms = FssEss * Favg / ( 1.0 - Ems * Favg );\n\tsingleScatter += FssEss;\n\tmultiScatter += Fms * Ems;\n}\n#if NUM_RECT_AREA_LIGHTS > 0\n\tvoid RE_Direct_RectArea_Physical( const in RectAreaLight rectAreaLight, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\t\tvec3 normal = geometryNormal;\n\t\tvec3 viewDir = geometryViewDir;\n\t\tvec3 position = geometryPosition;\n\t\tvec3 lightPos = rectAreaLight.position;\n\t\tvec3 halfWidth = rectAreaLight.halfWidth;\n\t\tvec3 halfHeight = rectAreaLight.halfHeight;\n\t\tvec3 lightColor = rectAreaLight.color;\n\t\tfloat roughness = material.roughness;\n\t\tvec3 rectCoords[ 4 ];\n\t\trectCoords[ 0 ] = lightPos + halfWidth - halfHeight;\t\trectCoords[ 1 ] = lightPos - halfWidth - halfHeight;\n\t\trectCoords[ 2 ] = lightPos - halfWidth + halfHeight;\n\t\trectCoords[ 3 ] = lightPos + halfWidth + halfHeight;\n\t\tvec2 uv = LTC_Uv( normal, viewDir, roughness );\n\t\tvec4 t1 = texture2D( ltc_1, uv );\n\t\tvec4 t2 = texture2D( ltc_2, uv );\n\t\tmat3 mInv = mat3(\n\t\t\tvec3( t1.x, 0, t1.y ),\n\t\t\tvec3(    0, 1,    0 ),\n\t\t\tvec3( t1.z, 0, t1.w )\n\t\t);\n\t\tvec3 fresnel = ( material.specularColor * t2.x + ( vec3( 1.0 ) - material.specularColor ) * t2.y );\n\t\treflectedLight.directSpecular += lightColor * fresnel * LTC_Evaluate( normal, viewDir, position, mInv, rectCoords );\n\t\treflectedLight.directDiffuse += lightColor * material.diffuseColor * LTC_Evaluate( normal, viewDir, position, mat3( 1.0 ), rectCoords );\n\t}\n#endif\nvoid RE_Direct_Physical( const in IncidentLight directLight, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\tfloat dotNL = saturate( dot( geometryNormal, directLight.direction ) );\n\tvec3 irradiance = dotNL * directLight.color;\n\t#ifdef USE_CLEARCOAT\n\t\tfloat dotNLcc = saturate( dot( geometryClearcoatNormal, directLight.direction ) );\n\t\tvec3 ccIrradiance = dotNLcc * directLight.color;\n\t\tclearcoatSpecularDirect += ccIrradiance * BRDF_GGX_Clearcoat( directLight.direction, geometryViewDir, geometryClearcoatNormal, material );\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tsheenSpecularDirect += irradiance * BRDF_Sheen( directLight.direction, geometryViewDir, geometryNormal, material.sheenColor, material.sheenRoughness );\n\t#endif\n\treflectedLight.directSpecular += irradiance * BRDF_GGX( directLight.direction, geometryViewDir, geometryNormal, material );\n\treflectedLight.directDiffuse += irradiance * BRDF_Lambert( material.diffuseColor );\n}\nvoid RE_IndirectDiffuse_Physical( const in vec3 irradiance, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight ) {\n\treflectedLight.indirectDiffuse += irradiance * BRDF_Lambert( material.diffuseColor );\n}\nvoid RE_IndirectSpecular_Physical( const in vec3 radiance, const in vec3 irradiance, const in vec3 clearcoatRadiance, const in vec3 geometryPosition, const in vec3 geometryNormal, const in vec3 geometryViewDir, const in vec3 geometryClearcoatNormal, const in PhysicalMaterial material, inout ReflectedLight reflectedLight) {\n\t#ifdef USE_CLEARCOAT\n\t\tclearcoatSpecularIndirect += clearcoatRadiance * EnvironmentBRDF( geometryClearcoatNormal, geometryViewDir, material.clearcoatF0, material.clearcoatF90, material.clearcoatRoughness );\n\t#endif\n\t#ifdef USE_SHEEN\n\t\tsheenSpecularIndirect += irradiance * material.sheenColor * IBLSheenBRDF( geometryNormal, geometryViewDir, material.sheenRoughness );\n\t#endif\n\tvec3 singleScattering = vec3( 0.0 );\n\tvec3 multiScattering = vec3( 0.0 );\n\tvec3 cosineWeightedIrradiance = irradiance * RECIPROCAL_PI;\n\t#ifdef USE_IRIDESCENCE\n\t\tcomputeMultiscatteringIridescence( geometryNormal, geometryViewDir, material.specularColor, material.specularF90, material.iridescence, material.iridescenceFresnel, material.roughness, singleScattering, multiScattering );\n\t#else\n\t\tcomputeMultiscattering( geometryNormal, geometryViewDir, material.specularColor, material.specularF90, material.roughness, singleScattering, multiScattering );\n\t#endif\n\tvec3 totalScattering = singleScattering + multiScattering;\n\tvec3 diffuse = material.diffuseColor * ( 1.0 - max( max( totalScattering.r, totalScattering.g ), totalScattering.b ) );\n\treflectedLight.indirectSpecular += radiance * singleScattering;\n\treflectedLight.indirectSpecular += multiScattering * cosineWeightedIrradiance;\n\treflectedLight.indirectDiffuse += diffuse * cosineWeightedIrradiance;\n}\n#define RE_Direct\t\t\t\tRE_Direct_Physical\n#define RE_Direct_RectArea\t\tRE_Direct_RectArea_Physical\n#define RE_IndirectDiffuse\t\tRE_IndirectDiffuse_Physical\n#define RE_IndirectSpecular\t\tRE_IndirectSpecular_Physical\nfloat computeSpecularOcclusion( const in float dotNV, const in float ambientOcclusion, const in float roughness ) {\n\treturn saturate( pow( dotNV + ambientOcclusion, exp2( - 16.0 * roughness - 1.0 ) ) - 1.0 + ambientOcclusion );\n}";
 
 var lights_fragment_begin = "\nvec3 geometryPosition = - vViewPosition;\nvec3 geometryNormal = normal;\nvec3 geometryViewDir = ( isOrthographic ) ? vec3( 0, 0, 1 ) : normalize( vViewPosition );\nvec3 geometryClearcoatNormal = vec3( 0.0 );\n#ifdef USE_CLEARCOAT\n\tgeometryClearcoatNormal = clearcoatNormal;\n#endif\n#ifdef USE_IRIDESCENCE\n\tfloat dotNVi = saturate( dot( normal, geometryViewDir ) );\n\tif ( material.iridescenceThickness == 0.0 ) {\n\t\tmaterial.iridescence = 0.0;\n\t} else {\n\t\tmaterial.iridescence = saturate( material.iridescence );\n\t}\n\tif ( material.iridescence > 0.0 ) {\n\t\tmaterial.iridescenceFresnel = evalIridescence( 1.0, material.iridescenceIOR, dotNVi, material.iridescenceThickness, material.specularColor );\n\t\tmaterial.iridescenceF0 = Schlick_to_F0( material.iridescenceFresnel, 1.0, dotNVi );\n\t}\n#endif\nIncidentLight directLight;\n#if ( NUM_POINT_LIGHTS > 0 ) && defined( RE_Direct )\n\tPointLight pointLight;\n\t#if defined( USE_SHADOWMAP ) && NUM_POINT_LIGHT_SHADOWS > 0\n\tPointLightShadow pointLightShadow;\n\t#endif\n\t#pragma unroll_loop_start\n\tfor ( int i = 0; i < NUM_POINT_LIGHTS; i ++ ) {\n\t\tpointLight = pointLights[ i ];\n\t\tgetPointLightInfo( pointLight, geometryPosition, directLight );\n\t\t#if defined( USE_SHADOWMAP ) && ( UNROLLED_LOOP_INDEX < NUM_POINT_LIGHT_SHADOWS )\n\t\tpointLightShadow = pointLightShadows[ i ];\n\t\tdirectLight.color *= ( directLight.visible && receiveShadow ) ? getPointShadow( pointShadowMap[ i ], pointLightShadow.shadowMapSize, pointLightShadow.shadowIntensity, pointLightShadow.shadowBias, pointLightShadow.shadowRadius, vPointShadowCoord[ i ], pointLightShadow.shadowCameraNear, pointLightShadow.shadowCameraFar ) : 1.0;\n\t\t#endif\n\t\tRE_Direct( directLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );\n\t}\n\t#pragma unroll_loop_end\n#endif\n#if ( NUM_SPOT_LIGHTS > 0 ) && defined( RE_Direct )\n\tSpotLight spotLight;\n\tvec4 spotColor;\n\tvec3 spotLightCoord;\n\tbool inSpotLightMap;\n\t#if defined( USE_SHADOWMAP ) && NUM_SPOT_LIGHT_SHADOWS > 0\n\tSpotLightShadow spotLightShadow;\n\t#endif\n\t#pragma unroll_loop_start\n\tfor ( int i = 0; i < NUM_SPOT_LIGHTS; i ++ ) {\n\t\tspotLight = spotLights[ i ];\n\t\tgetSpotLightInfo( spotLight, geometryPosition, directLight );\n\t\t#if ( UNROLLED_LOOP_INDEX < NUM_SPOT_LIGHT_SHADOWS_WITH_MAPS )\n\t\t#define SPOT_LIGHT_MAP_INDEX UNROLLED_LOOP_INDEX\n\t\t#elif ( UNROLLED_LOOP_INDEX < NUM_SPOT_LIGHT_SHADOWS )\n\t\t#define SPOT_LIGHT_MAP_INDEX NUM_SPOT_LIGHT_MAPS\n\t\t#else\n\t\t#define SPOT_LIGHT_MAP_INDEX ( UNROLLED_LOOP_INDEX - NUM_SPOT_LIGHT_SHADOWS + NUM_SPOT_LIGHT_SHADOWS_WITH_MAPS )\n\t\t#endif\n\t\t#if ( SPOT_LIGHT_MAP_INDEX < NUM_SPOT_LIGHT_MAPS )\n\t\t\tspotLightCoord = vSpotLightCoord[ i ].xyz / vSpotLightCoord[ i ].w;\n\t\t\tinSpotLightMap = all( lessThan( abs( spotLightCoord * 2. - 1. ), vec3( 1.0 ) ) );\n\t\t\tspotColor = texture2D( spotLightMap[ SPOT_LIGHT_MAP_INDEX ], spotLightCoord.xy );\n\t\t\tdirectLight.color = inSpotLightMap ? directLight.color * spotColor.rgb : directLight.color;\n\t\t#endif\n\t\t#undef SPOT_LIGHT_MAP_INDEX\n\t\t#if defined( USE_SHADOWMAP ) && ( UNROLLED_LOOP_INDEX < NUM_SPOT_LIGHT_SHADOWS )\n\t\tspotLightShadow = spotLightShadows[ i ];\n\t\tdirectLight.color *= ( directLight.visible && receiveShadow ) ? getShadow( spotShadowMap[ i ], spotLightShadow.shadowMapSize, spotLightShadow.shadowIntensity, spotLightShadow.shadowBias, spotLightShadow.shadowRadius, vSpotLightCoord[ i ] ) : 1.0;\n\t\t#endif\n\t\tRE_Direct( directLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );\n\t}\n\t#pragma unroll_loop_end\n#endif\n#if ( NUM_DIR_LIGHTS > 0 ) && defined( RE_Direct )\n\tDirectionalLight directionalLight;\n\t#if defined( USE_SHADOWMAP ) && NUM_DIR_LIGHT_SHADOWS > 0\n\tDirectionalLightShadow directionalLightShadow;\n\t#endif\n\t#pragma unroll_loop_start\n\tfor ( int i = 0; i < NUM_DIR_LIGHTS; i ++ ) {\n\t\tdirectionalLight = directionalLights[ i ];\n\t\tgetDirectionalLightInfo( directionalLight, directLight );\n\t\t#if defined( USE_SHADOWMAP ) && ( UNROLLED_LOOP_INDEX < NUM_DIR_LIGHT_SHADOWS )\n\t\tdirectionalLightShadow = directionalLightShadows[ i ];\n\t\tdirectLight.color *= ( directLight.visible && receiveShadow ) ? getShadow( directionalShadowMap[ i ], directionalLightShadow.shadowMapSize, directionalLightShadow.shadowIntensity, directionalLightShadow.shadowBias, directionalLightShadow.shadowRadius, vDirectionalShadowCoord[ i ] ) : 1.0;\n\t\t#endif\n\t\tRE_Direct( directLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );\n\t}\n\t#pragma unroll_loop_end\n#endif\n#if ( NUM_RECT_AREA_LIGHTS > 0 ) && defined( RE_Direct_RectArea )\n\tRectAreaLight rectAreaLight;\n\t#pragma unroll_loop_start\n\tfor ( int i = 0; i < NUM_RECT_AREA_LIGHTS; i ++ ) {\n\t\trectAreaLight = rectAreaLights[ i ];\n\t\tRE_Direct_RectArea( rectAreaLight, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, material, reflectedLight );\n\t}\n\t#pragma unroll_loop_end\n#endif\n#if defined( RE_IndirectDiffuse )\n\tvec3 iblIrradiance = vec3( 0.0 );\n\tvec3 irradiance = getAmbientLightIrradiance( ambientLightColor );\n\t#if defined( USE_LIGHT_PROBES )\n\t\tirradiance += getLightProbeIrradiance( lightProbe, geometryNormal );\n\t#endif\n\t#if ( NUM_HEMI_LIGHTS > 0 )\n\t\t#pragma unroll_loop_start\n\t\tfor ( int i = 0; i < NUM_HEMI_LIGHTS; i ++ ) {\n\t\t\tirradiance += getHemisphereLightIrradiance( hemisphereLights[ i ], geometryNormal );\n\t\t}\n\t\t#pragma unroll_loop_end\n\t#endif\n#endif\n#if defined( RE_IndirectSpecular )\n\tvec3 radiance = vec3( 0.0 );\n\tvec3 clearcoatRadiance = vec3( 0.0 );\n#endif";
 
@@ -59239,7 +59239,7 @@ var roughnessmap_fragment = "float roughnessFactor = roughness;\n#ifdef USE_ROUG
 
 var roughnessmap_pars_fragment = "#ifdef USE_ROUGHNESSMAP\n\tuniform sampler2D roughnessMap;\n#endif";
 
-var shadowmap_pars_fragment = "#if NUM_SPOT_LIGHT_COORDS > 0\n\tvarying vec4 vSpotLightCoord[ NUM_SPOT_LIGHT_COORDS ];\n#endif\n#if NUM_SPOT_LIGHT_MAPS > 0\n\tuniform sampler2D spotLightMap[ NUM_SPOT_LIGHT_MAPS ];\n#endif\n#ifdef USE_SHADOWMAP\n\t#if NUM_DIR_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D directionalShadowMap[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tvarying vec4 vDirectionalShadowCoord[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tstruct DirectionalLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform DirectionalLightShadow directionalLightShadows[ NUM_DIR_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_SPOT_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D spotShadowMap[ NUM_SPOT_LIGHT_SHADOWS ];\n\t\tstruct SpotLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform SpotLightShadow spotLightShadows[ NUM_SPOT_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_POINT_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D pointShadowMap[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tvarying vec4 vPointShadowCoord[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tstruct PointLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t\tfloat shadowCameraNear;\n\t\t\tfloat shadowCameraFar;\n\t\t};\n\t\tuniform PointLightShadow pointLightShadows[ NUM_POINT_LIGHT_SHADOWS ];\n\t#endif\n\tfloat texture2DCompare( sampler2D depths, vec2 uv, float compare ) {\n\t\tfloat depth = unpackRGBAToDepth( texture2D( depths, uv ) );\n\t\t#ifdef USE_REVERSED_DEPTH_BUFFER\n\t\t\treturn step( depth, compare );\n\t\t#else\n\t\t\treturn step( compare, depth );\n\t\t#endif\n\t}\n\tvec2 texture2DDistribution( sampler2D shadow, vec2 uv ) {\n\t\treturn unpackRGBATo2Half( texture2D( shadow, uv ) );\n\t}\n\tfloat VSMShadow( sampler2D shadow, vec2 uv, float compare ) {\n\t\tfloat o西伯利亚雪橇犬lusion = 1.0;\n\t\tvec2 distribution = texture2DDistribution( shadow, uv );\n\t\t#ifdef USE_REVERSED_DEPTH_BUFFER\n\t\t\tfloat hard_shadow = step( distribution.x, compare );\n\t\t#else\n\t\t\tfloat hard_shadow = step( compare, distribution.x );\n\t\t#endif\n\t\tif ( hard_shadow != 1.0 ) {\n\t\t\tfloat distance = compare - distribution.x;\n\t\t\tfloat variance = max( 0.00000, distribution.y * distribution.y );\n\t\t\tfloat softness_probability = variance / (variance + distance * distance );\t\t\tsoftness_probability = clamp( ( softness_probability - 0.3 ) / ( 0.95 - 0.3 ), 0.0, 1.0 );\t\t\to西伯利亚雪橇犬lusion = clamp( max( hard_shadow, softness_probability ), 0.0, 1.0 );\n\t\t}\n\t\treturn o西伯利亚雪橇犬lusion;\n\t}\n\tfloat getShadow( sampler2D shadowMap, vec2 shadowMapSize, float shadowIntensity, float shadowBias, float shadowRadius, vec4 shadowCoord ) {\n\t\tfloat shadow = 1.0;\n\t\tshadowCoord.xyz /= shadowCoord.w;\n\t\tshadowCoord.z += shadowBias;\n\t\tbool inFrustum = shadowCoord.x >= 0.0 && shadowCoord.x <= 1.0 && shadowCoord.y >= 0.0 && shadowCoord.y <= 1.0;\n\t\tbool frustumTest = inFrustum && shadowCoord.z <= 1.0;\n\t\tif ( frustumTest ) {\n\t\t#if defined( SHADOWMAP_TYPE_PCF )\n\t\t\tvec2 texelSize = vec2( 1.0 ) / shadowMapSize;\n\t\t\tfloat dx0 = - texelSize.x * shadowRadius;\n\t\t\tfloat dy0 = - texelSize.y * shadowRadius;\n\t\t\tfloat dx1 = + texelSize.x * shadowRadius;\n\t\t\tfloat dy1 = + texelSize.y * shadowRadius;\n\t\t\tfloat dx2 = dx0 / 2.0;\n\t\t\tfloat dy2 = dy0 / 2.0;\n\t\t\tfloat dx3 = dx1 / 2.0;\n\t\t\tfloat dy3 = dy1 / 2.0;\n\t\t\tshadow = (\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy, shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, dy1 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy1 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, dy1 ), shadowCoord.z )\n\t\t\t) * ( 1.0 / 17.0 );\n\t\t#elif defined( SHADOWMAP_TYPE_PCF_SOFT )\n\t\t\tvec2 texelSize = vec2( 1.0 ) / shadowMapSize;\n\t\t\tfloat dx = texelSize.x;\n\t\t\tfloat dy = texelSize.y;\n\t\t\tvec2 uv = shadowCoord.xy;\n\t\t\tvec2 f = fract( uv * shadowMapSize + 0.5 );\n\t\t\tuv -= f * texelSize;\n\t\t\tshadow = (\n\t\t\t\ttexture2DCompare( shadowMap, uv, shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + vec2( dx, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + vec2( 0.0, dy ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + texelSize, shadowCoord.z ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( -dx, 0.0 ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, 0.0 ), shadowCoord.z ),\n\t\t\t\t\t f.x ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( -dx, dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, dy ), shadowCoord.z ),\n\t\t\t\t\t f.x ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( 0.0, -dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 0.0, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t f.y ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t f.y ) +\n\t\t\t\tmix( mix( texture2DCompare( shadowMap, uv + vec2( -dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t\t  texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t\t  f.x ),\n\t\t\t\t\t mix( texture2DCompare( shadowMap, uv + vec2( -dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t\t  texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t\t  f.x ),\n\t\t\t\t\t f.y )\n\t\t\t) * ( 1.0 / 9.0 );\n\t\t#elif defined( SHADOWMAP_TYPE_VSM )\n\t\t\tshadow = VSMShadow( shadowMap, shadowCoord.xy, shadowCoord.z );\n\t\t#else\n\t\t\tshadow = texture2DCompare( shadowMap, shadowCoord.xy, shadowCoord.z );\n\t\t#endif\n\t\t}\n\t\treturn mix( 1.0, shadow, shadowIntensity );\n\t}\n\tvec2 cubeToUV( vec3 v, float texelSizeY ) {\n\t\tvec3 absV = abs( v );\n\t\tfloat scaleToCube = 1.0 / max( absV.x, max( absV.y, absV.z ) );\n\t\tabsV *= scaleToCube;\n\t\tv *= scaleToCube * ( 1.0 - 2.0 * texelSizeY );\n\t\tvec2 planar = v.xy;\n\t\tfloat almostATexel = 1.5 * texelSizeY;\n\t\tfloat almostOne = 1.0 - almostATexel;\n\t\tif ( absV.z >= almostOne ) {\n\t\t\tif ( v.z > 0.0 )\n\t\t\t\tplanar.x = 4.0 - v.x;\n\t\t} else if ( absV.x >= almostOne ) {\n\t\t\tfloat signX = sign( v.x );\n\t\t\tplanar.x = v.z * signX + 2.0 * signX;\n\t\t} else if ( absV.y >= almostOne ) {\n\t\t\tfloat signY = sign( v.y );\n\t\t\tplanar.x = v.x + 2.0 * signY + 2.0;\n\t\t\tplanar.y = v.z * signY - 2.0;\n\t\t}\n\t\treturn vec2( 0.125, 0.25 ) * planar + vec2( 0.375, 0.75 );\n\t}\n\tfloat getPointShadow( sampler2D shadowMap, vec2 shadowMapSize, float shadowIntensity, float shadowBias, float shadowRadius, vec4 shadowCoord, float shadowCameraNear, float shadowCameraFar ) {\n\t\tfloat shadow = 1.0;\n\t\tvec3 lightToPosition = shadowCoord.xyz;\n\t\t\n\t\tfloat lightToPositionLength = length( lightToPosition );\n\t\tif ( lightToPositionLength - shadowCameraFar <= 0.0 && lightToPositionLength - shadowCameraNear >= 0.0 ) {\n\t\t\tfloat dp = ( lightToPositionLength - shadowCameraNear ) / ( shadowCameraFar - shadowCameraNear );\t\t\tdp += shadowBias;\n\t\t\tvec3 bd3D = normalize( lightToPosition );\n\t\t\tvec2 texelSize = vec2( 1.0 ) / ( shadowMapSize * vec2( 4.0, 2.0 ) );\n\t\t\t#if defined( SHADOWMAP_TYPE_PCF ) || defined( SHADOWMAP_TYPE_PCF_SOFT ) || defined( SHADOWMAP_TYPE_VSM )\n\t\t\t\tvec2 offset = vec2( - 1, 1 ) * shadowRadius * texelSize.y;\n\t\t\t\tshadow = (\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xyy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yyy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xyx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yyx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xxy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yxy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xxx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yxx, texelSize.y ), dp )\n\t\t\t\t) * ( 1.0 / 9.0 );\n\t\t\t#else\n\t\t\t\tshadow = texture2DCompare( shadowMap, cubeToUV( bd3D, texelSize.y ), dp );\n\t\t\t#endif\n\t\t}\n\t\treturn mix( 1.0, shadow, shadowIntensity );\n\t}\n#endif";
+var shadowmap_pars_fragment = "#if NUM_SPOT_LIGHT_COORDS > 0\n\tvarying vec4 vSpotLightCoord[ NUM_SPOT_LIGHT_COORDS ];\n#endif\n#if NUM_SPOT_LIGHT_MAPS > 0\n\tuniform sampler2D spotLightMap[ NUM_SPOT_LIGHT_MAPS ];\n#endif\n#ifdef USE_SHADOWMAP\n\t#if NUM_DIR_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D directionalShadowMap[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tvarying vec4 vDirectionalShadowCoord[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tstruct DirectionalLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform DirectionalLightShadow directionalLightShadows[ NUM_DIR_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_SPOT_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D spotShadowMap[ NUM_SPOT_LIGHT_SHADOWS ];\n\t\tstruct SpotLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform SpotLightShadow spotLightShadows[ NUM_SPOT_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_POINT_LIGHT_SHADOWS > 0\n\t\tuniform sampler2D pointShadowMap[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tvarying vec4 vPointShadowCoord[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tstruct PointLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t\tfloat shadowCameraNear;\n\t\t\tfloat shadowCameraFar;\n\t\t};\n\t\tuniform PointLightShadow pointLightShadows[ NUM_POINT_LIGHT_SHADOWS ];\n\t#endif\n\tfloat texture2DCompare( sampler2D depths, vec2 uv, float compare ) {\n\t\tfloat depth = unpackRGBAToDepth( texture2D( depths, uv ) );\n\t\t#ifdef USE_REVERSED_DEPTH_BUFFER\n\t\t\treturn step( depth, compare );\n\t\t#else\n\t\t\treturn step( compare, depth );\n\t\t#endif\n\t}\n\tvec2 texture2DDistribution( sampler2D shadow, vec2 uv ) {\n\t\treturn unpackRGBATo2Half( texture2D( shadow, uv ) );\n\t}\n\tfloat VSMShadow( sampler2D shadow, vec2 uv, float compare ) {\n\t\tfloat occlusion = 1.0;\n\t\tvec2 distribution = texture2DDistribution( shadow, uv );\n\t\t#ifdef USE_REVERSED_DEPTH_BUFFER\n\t\t\tfloat hard_shadow = step( distribution.x, compare );\n\t\t#else\n\t\t\tfloat hard_shadow = step( compare, distribution.x );\n\t\t#endif\n\t\tif ( hard_shadow != 1.0 ) {\n\t\t\tfloat distance = compare - distribution.x;\n\t\t\tfloat variance = max( 0.00000, distribution.y * distribution.y );\n\t\t\tfloat softness_probability = variance / (variance + distance * distance );\t\t\tsoftness_probability = clamp( ( softness_probability - 0.3 ) / ( 0.95 - 0.3 ), 0.0, 1.0 );\t\t\tocclusion = clamp( max( hard_shadow, softness_probability ), 0.0, 1.0 );\n\t\t}\n\t\treturn occlusion;\n\t}\n\tfloat getShadow( sampler2D shadowMap, vec2 shadowMapSize, float shadowIntensity, float shadowBias, float shadowRadius, vec4 shadowCoord ) {\n\t\tfloat shadow = 1.0;\n\t\tshadowCoord.xyz /= shadowCoord.w;\n\t\tshadowCoord.z += shadowBias;\n\t\tbool inFrustum = shadowCoord.x >= 0.0 && shadowCoord.x <= 1.0 && shadowCoord.y >= 0.0 && shadowCoord.y <= 1.0;\n\t\tbool frustumTest = inFrustum && shadowCoord.z <= 1.0;\n\t\tif ( frustumTest ) {\n\t\t#if defined( SHADOWMAP_TYPE_PCF )\n\t\t\tvec2 texelSize = vec2( 1.0 ) / shadowMapSize;\n\t\t\tfloat dx0 = - texelSize.x * shadowRadius;\n\t\t\tfloat dy0 = - texelSize.y * shadowRadius;\n\t\t\tfloat dx1 = + texelSize.x * shadowRadius;\n\t\t\tfloat dy1 = + texelSize.y * shadowRadius;\n\t\t\tfloat dx2 = dx0 / 2.0;\n\t\t\tfloat dy2 = dy0 / 2.0;\n\t\t\tfloat dx3 = dx1 / 2.0;\n\t\t\tfloat dy3 = dy1 / 2.0;\n\t\t\tshadow = (\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, dy0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, dy2 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy, shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx2, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx3, dy3 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx0, dy1 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( 0.0, dy1 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, shadowCoord.xy + vec2( dx1, dy1 ), shadowCoord.z )\n\t\t\t) * ( 1.0 / 17.0 );\n\t\t#elif defined( SHADOWMAP_TYPE_PCF_SOFT )\n\t\t\tvec2 texelSize = vec2( 1.0 ) / shadowMapSize;\n\t\t\tfloat dx = texelSize.x;\n\t\t\tfloat dy = texelSize.y;\n\t\t\tvec2 uv = shadowCoord.xy;\n\t\t\tvec2 f = fract( uv * shadowMapSize + 0.5 );\n\t\t\tuv -= f * texelSize;\n\t\t\tshadow = (\n\t\t\t\ttexture2DCompare( shadowMap, uv, shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + vec2( dx, 0.0 ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + vec2( 0.0, dy ), shadowCoord.z ) +\n\t\t\t\ttexture2DCompare( shadowMap, uv + texelSize, shadowCoord.z ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( -dx, 0.0 ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, 0.0 ), shadowCoord.z ),\n\t\t\t\t\t f.x ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( -dx, dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, dy ), shadowCoord.z ),\n\t\t\t\t\t f.x ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( 0.0, -dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( 0.0, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t f.y ) +\n\t\t\t\tmix( texture2DCompare( shadowMap, uv + vec2( dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t texture2DCompare( shadowMap, uv + vec2( dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t f.y ) +\n\t\t\t\tmix( mix( texture2DCompare( shadowMap, uv + vec2( -dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t\t  texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, -dy ), shadowCoord.z ),\n\t\t\t\t\t\t  f.x ),\n\t\t\t\t\t mix( texture2DCompare( shadowMap, uv + vec2( -dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t\t  texture2DCompare( shadowMap, uv + vec2( 2.0 * dx, 2.0 * dy ), shadowCoord.z ),\n\t\t\t\t\t\t  f.x ),\n\t\t\t\t\t f.y )\n\t\t\t) * ( 1.0 / 9.0 );\n\t\t#elif defined( SHADOWMAP_TYPE_VSM )\n\t\t\tshadow = VSMShadow( shadowMap, shadowCoord.xy, shadowCoord.z );\n\t\t#else\n\t\t\tshadow = texture2DCompare( shadowMap, shadowCoord.xy, shadowCoord.z );\n\t\t#endif\n\t\t}\n\t\treturn mix( 1.0, shadow, shadowIntensity );\n\t}\n\tvec2 cubeToUV( vec3 v, float texelSizeY ) {\n\t\tvec3 absV = abs( v );\n\t\tfloat scaleToCube = 1.0 / max( absV.x, max( absV.y, absV.z ) );\n\t\tabsV *= scaleToCube;\n\t\tv *= scaleToCube * ( 1.0 - 2.0 * texelSizeY );\n\t\tvec2 planar = v.xy;\n\t\tfloat almostATexel = 1.5 * texelSizeY;\n\t\tfloat almostOne = 1.0 - almostATexel;\n\t\tif ( absV.z >= almostOne ) {\n\t\t\tif ( v.z > 0.0 )\n\t\t\t\tplanar.x = 4.0 - v.x;\n\t\t} else if ( absV.x >= almostOne ) {\n\t\t\tfloat signX = sign( v.x );\n\t\t\tplanar.x = v.z * signX + 2.0 * signX;\n\t\t} else if ( absV.y >= almostOne ) {\n\t\t\tfloat signY = sign( v.y );\n\t\t\tplanar.x = v.x + 2.0 * signY + 2.0;\n\t\t\tplanar.y = v.z * signY - 2.0;\n\t\t}\n\t\treturn vec2( 0.125, 0.25 ) * planar + vec2( 0.375, 0.75 );\n\t}\n\tfloat getPointShadow( sampler2D shadowMap, vec2 shadowMapSize, float shadowIntensity, float shadowBias, float shadowRadius, vec4 shadowCoord, float shadowCameraNear, float shadowCameraFar ) {\n\t\tfloat shadow = 1.0;\n\t\tvec3 lightToPosition = shadowCoord.xyz;\n\t\t\n\t\tfloat lightToPositionLength = length( lightToPosition );\n\t\tif ( lightToPositionLength - shadowCameraFar <= 0.0 && lightToPositionLength - shadowCameraNear >= 0.0 ) {\n\t\t\tfloat dp = ( lightToPositionLength - shadowCameraNear ) / ( shadowCameraFar - shadowCameraNear );\t\t\tdp += shadowBias;\n\t\t\tvec3 bd3D = normalize( lightToPosition );\n\t\t\tvec2 texelSize = vec2( 1.0 ) / ( shadowMapSize * vec2( 4.0, 2.0 ) );\n\t\t\t#if defined( SHADOWMAP_TYPE_PCF ) || defined( SHADOWMAP_TYPE_PCF_SOFT ) || defined( SHADOWMAP_TYPE_VSM )\n\t\t\t\tvec2 offset = vec2( - 1, 1 ) * shadowRadius * texelSize.y;\n\t\t\t\tshadow = (\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xyy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yyy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xyx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yyx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xxy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yxy, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.xxx, texelSize.y ), dp ) +\n\t\t\t\t\ttexture2DCompare( shadowMap, cubeToUV( bd3D + offset.yxx, texelSize.y ), dp )\n\t\t\t\t) * ( 1.0 / 9.0 );\n\t\t\t#else\n\t\t\t\tshadow = texture2DCompare( shadowMap, cubeToUV( bd3D, texelSize.y ), dp );\n\t\t\t#endif\n\t\t}\n\t\treturn mix( 1.0, shadow, shadowIntensity );\n\t}\n#endif";
 
 var shadowmap_pars_vertex = "#if NUM_SPOT_LIGHT_COORDS > 0\n\tuniform mat4 spotLightMatrix[ NUM_SPOT_LIGHT_COORDS ];\n\tvarying vec4 vSpotLightCoord[ NUM_SPOT_LIGHT_COORDS ];\n#endif\n#ifdef USE_SHADOWMAP\n\t#if NUM_DIR_LIGHT_SHADOWS > 0\n\t\tuniform mat4 directionalShadowMatrix[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tvarying vec4 vDirectionalShadowCoord[ NUM_DIR_LIGHT_SHADOWS ];\n\t\tstruct DirectionalLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform DirectionalLightShadow directionalLightShadows[ NUM_DIR_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_SPOT_LIGHT_SHADOWS > 0\n\t\tstruct SpotLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t};\n\t\tuniform SpotLightShadow spotLightShadows[ NUM_SPOT_LIGHT_SHADOWS ];\n\t#endif\n\t#if NUM_POINT_LIGHT_SHADOWS > 0\n\t\tuniform mat4 pointShadowMatrix[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tvarying vec4 vPointShadowCoord[ NUM_POINT_LIGHT_SHADOWS ];\n\t\tstruct PointLightShadow {\n\t\t\tfloat shadowIntensity;\n\t\t\tfloat shadowBias;\n\t\t\tfloat shadowNormalBias;\n\t\t\tfloat shadowRadius;\n\t\t\tvec2 shadowMapSize;\n\t\t\tfloat shadowCameraNear;\n\t\t\tfloat shadowCameraFar;\n\t\t};\n\t\tuniform PointLightShadow pointLightShadows[ NUM_POINT_LIGHT_SHADOWS ];\n\t#endif\n#endif";
 
@@ -59325,7 +59325,7 @@ const fragment$6 = "#define PHONG\nuniform vec3 diffuse;\nuniform vec3 emissive;
 
 const vertex$5 = "#define STANDARD\nvarying vec3 vViewPosition;\n#ifdef USE_TRANSMISSION\n\tvarying vec3 vWorldPosition;\n#endif\n#include <common>\n#include <batching_pars_vertex>\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <normal_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvoid main() {\n\t#include <uv_vertex>\n\t#include <color_vertex>\n\t#include <morphinstance_vertex>\n\t#include <morphcolor_vertex>\n\t#include <batching_vertex>\n\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\t#include <normal_vertex>\n\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\tvViewPosition = - mvPosition.xyz;\n\t#include <worldpos_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n#ifdef USE_TRANSMISSION\n\tvWorldPosition = worldPosition.xyz;\n#endif\n}";
 
-const fragment$5 = "#define STANDARD\n#ifdef PHYSICAL\n\t#define IOR\n\t#define USE_SPECULAR\n#endif\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float roughness;\nuniform float metalness;\nuniform float opacity;\n#ifdef IOR\n\tuniform float ior;\n#endif\n#ifdef USE_SPECULAR\n\tuniform float specularIntensity;\n\tuniform vec3 specularColor;\n\t#ifdef USE_SPECULAR_COLORMAP\n\t\tuniform sampler2D specularColorMap;\n\t#endif\n\t#ifdef USE_SPECULAR_INTENSITYMAP\n\t\tuniform sampler2D specularIntensityMap;\n\t#endif\n#endif\n#ifdef USE_CLEARCOAT\n\tuniform float clearcoat;\n\tuniform float clearcoatRoughness;\n#endif\n#ifdef USE_DISPERSION\n\tuniform float dispersion;\n#endif\n#ifdef USE_IRIDESCENCE\n\tuniform float iridescence;\n\tuniform float iridescenceIOR;\n\tuniform float iridescenceThicknessMinimum;\n\tuniform float iridescenceThicknessMaximum;\n#endif\n#ifdef USE_SHEEN\n\tuniform vec3 sheenColor;\n\tuniform float sheenRoughness;\n\t#ifdef USE_SHEEN_COLORMAP\n\t\tuniform sampler2D sheenColorMap;\n\t#endif\n\t#ifdef USE_SHEEN_ROUGHNESSMAP\n\t\tuniform sampler2D sheenRoughnessMap;\n\t#endif\n#endif\n#ifdef USE_ANISOTROPY\n\tuniform vec2 anisotropyVector;\n\t#ifdef USE_ANISOTROPYMAP\n\t\tuniform sampler2D anisotropyMap;\n\t#endif\n#endif\nvarying vec3 vViewPosition;\n#include <common>\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <alphahash_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <iridescence_fragment>\n#include <cube_uv_reflection_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_physical_pars_fragment>\n#include <fog_pars_fragment>\n#include <lights_pars_begin>\n#include <normal_pars_fragment>\n#include <lights_physical_pars_fragment>\n#include <transmission_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <bumpmap_pars_fragment>\n#include <normalmap_pars_fragment>\n#include <clearcoat_pars_fragment>\n#include <iridescence_pars_fragment>\n#include <roughnessmap_pars_fragment>\n#include <metalnessmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\nvoid main() {\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\t#include <clipping_planes_fragment>\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <alphahash_fragment>\n\t#include <roughnessmap_fragment>\n\t#include <metalnessmap_fragment>\n\t#include <normal_fragment_begin>\n\t#include <normal_fragment_maps>\n\t#include <clearcoat_normal_fragment_begin>\n\t#include <clearcoat_normal_fragment_maps>\n\t#include <emissivemap_fragment>\n\t#include <lights_physical_fragment>\n\t#include <lights_fragment_begin>\n\t#include <lights_fragment_maps>\n\t#include <lights_fragment_end>\n\t#include <aomap_fragment>\n\tvec3 totalDiffuse = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse;\n\tvec3 totalSpecular = reflectedLight.directSpecular + reflectedLight.indirectSpecular;\n\t#include <transmission_fragment>\n\tvec3 outgoingLight = totalDiffuse + totalSpecular + totalEmissiveRadiance;\n\t#ifdef USE_SHEEN\n\t\tfloat sheenEnergyComp = 1.0 - 0.157 * max3( material.sheenColor );\n\t\toutgoingLight = outgoingLight * sheenEnergyComp + sheenSpecularDirect + sheenSpecularIndirect;\n\t#endif\n\t#ifdef USE_CLEARCOAT\n\t\tfloat dotNV西伯利亚雪橇犬 = saturate( dot( geometryClearcoatNormal, geometryViewDir ) );\n\t\tvec3 F西伯利亚雪橇犬 = F_Schlick( material.clearcoatF0, material.clearcoatF90, dotNV西伯利亚雪橇犬 );\n\t\toutgoingLight = outgoingLight * ( 1.0 - material.clearcoat * F西伯利亚雪橇犬 ) + ( clearcoatSpecularDirect + clearcoatSpecularIndirect ) * material.clearcoat;\n\t#endif\n\t#include <opaque_fragment>\n\t#include <tonemapping_fragment>\n\t#include <colorspace_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}";
+const fragment$5 = "#define STANDARD\n#ifdef PHYSICAL\n\t#define IOR\n\t#define USE_SPECULAR\n#endif\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float roughness;\nuniform float metalness;\nuniform float opacity;\n#ifdef IOR\n\tuniform float ior;\n#endif\n#ifdef USE_SPECULAR\n\tuniform float specularIntensity;\n\tuniform vec3 specularColor;\n\t#ifdef USE_SPECULAR_COLORMAP\n\t\tuniform sampler2D specularColorMap;\n\t#endif\n\t#ifdef USE_SPECULAR_INTENSITYMAP\n\t\tuniform sampler2D specularIntensityMap;\n\t#endif\n#endif\n#ifdef USE_CLEARCOAT\n\tuniform float clearcoat;\n\tuniform float clearcoatRoughness;\n#endif\n#ifdef USE_DISPERSION\n\tuniform float dispersion;\n#endif\n#ifdef USE_IRIDESCENCE\n\tuniform float iridescence;\n\tuniform float iridescenceIOR;\n\tuniform float iridescenceThicknessMinimum;\n\tuniform float iridescenceThicknessMaximum;\n#endif\n#ifdef USE_SHEEN\n\tuniform vec3 sheenColor;\n\tuniform float sheenRoughness;\n\t#ifdef USE_SHEEN_COLORMAP\n\t\tuniform sampler2D sheenColorMap;\n\t#endif\n\t#ifdef USE_SHEEN_ROUGHNESSMAP\n\t\tuniform sampler2D sheenRoughnessMap;\n\t#endif\n#endif\n#ifdef USE_ANISOTROPY\n\tuniform vec2 anisotropyVector;\n\t#ifdef USE_ANISOTROPYMAP\n\t\tuniform sampler2D anisotropyMap;\n\t#endif\n#endif\nvarying vec3 vViewPosition;\n#include <common>\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <alphatest_pars_fragment>\n#include <alphahash_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <iridescence_fragment>\n#include <cube_uv_reflection_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_physical_pars_fragment>\n#include <fog_pars_fragment>\n#include <lights_pars_begin>\n#include <normal_pars_fragment>\n#include <lights_physical_pars_fragment>\n#include <transmission_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <bumpmap_pars_fragment>\n#include <normalmap_pars_fragment>\n#include <clearcoat_pars_fragment>\n#include <iridescence_pars_fragment>\n#include <roughnessmap_pars_fragment>\n#include <metalnessmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\nvoid main() {\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\t#include <clipping_planes_fragment>\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\t#include <logdepthbuf_fragment>\n\t#include <map_fragment>\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <alphahash_fragment>\n\t#include <roughnessmap_fragment>\n\t#include <metalnessmap_fragment>\n\t#include <normal_fragment_begin>\n\t#include <normal_fragment_maps>\n\t#include <clearcoat_normal_fragment_begin>\n\t#include <clearcoat_normal_fragment_maps>\n\t#include <emissivemap_fragment>\n\t#include <lights_physical_fragment>\n\t#include <lights_fragment_begin>\n\t#include <lights_fragment_maps>\n\t#include <lights_fragment_end>\n\t#include <aomap_fragment>\n\tvec3 totalDiffuse = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse;\n\tvec3 totalSpecular = reflectedLight.directSpecular + reflectedLight.indirectSpecular;\n\t#include <transmission_fragment>\n\tvec3 outgoingLight = totalDiffuse + totalSpecular + totalEmissiveRadiance;\n\t#ifdef USE_SHEEN\n\t\tfloat sheenEnergyComp = 1.0 - 0.157 * max3( material.sheenColor );\n\t\toutgoingLight = outgoingLight * sheenEnergyComp + sheenSpecularDirect + sheenSpecularIndirect;\n\t#endif\n\t#ifdef USE_CLEARCOAT\n\t\tfloat dotNVcc = saturate( dot( geometryClearcoatNormal, geometryViewDir ) );\n\t\tvec3 Fcc = F_Schlick( material.clearcoatF0, material.clearcoatF90, dotNVcc );\n\t\toutgoingLight = outgoingLight * ( 1.0 - material.clearcoat * Fcc ) + ( clearcoatSpecularDirect + clearcoatSpecularIndirect ) * material.clearcoat;\n\t#endif\n\t#include <opaque_fragment>\n\t#include <tonemapping_fragment>\n\t#include <colorspace_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}";
 
 const vertex$4 = "#define TOON\nvarying vec3 vViewPosition;\n#include <common>\n#include <batching_pars_vertex>\n#include <uv_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <normal_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\nvoid main() {\n\t#include <uv_vertex>\n\t#include <color_vertex>\n\t#include <morphinstance_vertex>\n\t#include <morphcolor_vertex>\n\t#include <batching_vertex>\n\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n\t#include <normal_vertex>\n\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\tvViewPosition = - mvPosition.xyz;\n\t#include <worldpos_vertex>\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n}";
 
@@ -60187,7 +60187,7 @@ function WebGLBackground( renderer, cubemaps, cubeuvmaps, state, objects, alpha,
 
 			_e1$1.copy( scene.backgroundRotation );
 
-			// a西伯利亚雪橇犬ommodate left-handed frame
+			// accommodate left-handed frame
 			_e1$1.x *= -1; _e1$1.y *= -1; _e1$1.z *= -1;
 
 			if ( background.isCubeTexture && background.isRenderTargetTexture === false ) {
@@ -61444,7 +61444,7 @@ const EXTRA_LOD_SIGMA = [ 0.125, 0.215, 0.35, 0.446, 0.526, 0.582 ];
 // samples and exit early, but not recompile the shader.
 const MAX_SAMPLES = 20;
 
-const _flatCamera = /*@__PURE__*/ new Orthographi西伯利亚雪橇犬amera();
+const _flatCamera = /*@__PURE__*/ new OrthographicCamera();
 const _clearColor = /*@__PURE__*/ new Color();
 let _oldTarget = null;
 let _oldActiveCubeFace = 0;
@@ -61474,7 +61474,7 @@ const _origin = /*@__PURE__*/ new Vector3();
 /**
  * This class generates a Prefiltered, Mipmapped Radiance Environment Map
  * (PMREM) from a cubeMap environment texture. This allows different levels of
- * blur to be quickly a西伯利亚雪橇犬essed based on material roughness. It is packed into a
+ * blur to be quickly accessed based on material roughness. It is packed into a
  * special CubeUV format that allows us to perform custom interpolation so that
  * we can support nonlinear formats such as RGBE. Unlike a traditional mipmap
  * chain, it only goes down to the LOD_MIN level (above), and then creates extra
@@ -61482,7 +61482,7 @@ const _origin = /*@__PURE__*/ new Vector3();
  * higher roughness levels. In this way we maintain resolution to smoothly
  * interpolate diffuse lighting while limiting sampling computation.
  *
- * Paper: Fast, A西伯利亚雪橇犬urate Image-Based Lighting:
+ * Paper: Fast, Accurate Image-Based Lighting:
  * {@link https://drive.google.com/file/d/15y8r_UpKlU9SvV4ILb0C3qCPecS8pvLz/view}
 */
 class PMREMGenerator {
@@ -61914,7 +61914,7 @@ class PMREMGenerator {
 	 * vertically and horizontally, but this breaks down on a cube. Here we apply
 	 * the blur latitudinally (around the poles), and then longitudinally (towards
 	 * the poles) to approximate the orthogonally-separable blur. It is least
-	 * a西伯利亚雪橇犬urate at the poles, but still does a decent job.
+	 * accurate at the poles, but still does a decent job.
 	 *
 	 * @private
 	 * @param {WebGLRenderTarget} cubeUVRenderTarget
@@ -63844,7 +63844,7 @@ function getSingularSetter( type ) {
 			return setValueT3D1;
 
 		case 0x8b60: // SAMPLER_CUBE
-		case 0x8d西伯利亚雪橇犬: // INT_SAMPLER_CUBE
+		case 0x8dcc: // INT_SAMPLER_CUBE
 		case 0x8dd4: // UNSIGNED_INT_SAMPLER_CUBE
 		case 0x8dc5: // SAMPLER_CUBE_SHADOW
 			return setValueT6;
@@ -64114,7 +64114,7 @@ function getPureArraySetter( type ) {
 			return setValueT3DArray;
 
 		case 0x8b60: // SAMPLER_CUBE
-		case 0x8d西伯利亚雪橇犬: // INT_SAMPLER_CUBE
+		case 0x8dcc: // INT_SAMPLER_CUBE
 		case 0x8dd4: // UNSIGNED_INT_SAMPLER_CUBE
 		case 0x8dc5: // SAMPLER_CUBE_SHADOW
 			return setValueT6Array;
@@ -65602,7 +65602,7 @@ function WebGLPrograms( renderer, cubemaps, cubeuvmaps, extensions, capabilities
 
 		const shaderID = shaderIDs[ material.type ];
 
-		// heuristics to create shader parameters a西伯利亚雪橇犬ording to lights in the scene
+		// heuristics to create shader parameters according to lights in the scene
 		// (not to blow over maxLights budget)
 
 		if ( material.precision !== null ) {
@@ -68186,12 +68186,12 @@ function WebGLState( gl, extensions ) {
 	const factorToGL = {
 		[ ZeroFactor ]: gl.ZERO,
 		[ OneFactor ]: gl.ONE,
-		[ Sr西伯利亚雪橇犬olorFactor ]: gl.SRC_COLOR,
+		[ SrcColorFactor ]: gl.SRC_COLOR,
 		[ SrcAlphaFactor ]: gl.SRC_ALPHA,
 		[ SrcAlphaSaturateFactor ]: gl.SRC_ALPHA_SATURATE,
 		[ DstColorFactor ]: gl.DST_COLOR,
 		[ DstAlphaFactor ]: gl.DST_ALPHA,
-		[ OneMinusSr西伯利亚雪橇犬olorFactor ]: gl.ONE_MINUS_SRC_COLOR,
+		[ OneMinusSrcColorFactor ]: gl.ONE_MINUS_SRC_COLOR,
 		[ OneMinusSrcAlphaFactor ]: gl.ONE_MINUS_SRC_ALPHA,
 		[ OneMinusDstColorFactor ]: gl.ONE_MINUS_DST_COLOR,
 		[ OneMinusDstAlphaFactor ]: gl.ONE_MINUS_DST_ALPHA,
@@ -68396,7 +68396,7 @@ function WebGLState( gl, extensions ) {
 
 			} else {
 
-				gl.frontFace( gl.西伯利亚雪橇犬W );
+				gl.frontFace( gl.CCW );
 
 			}
 
@@ -68801,7 +68801,7 @@ function WebGLState( gl, extensions ) {
 		gl.clearStencil( 0 );
 
 		gl.cullFace( gl.BACK );
-		gl.frontFace( gl.西伯利亚雪橇犬W );
+		gl.frontFace( gl.CCW );
 
 		gl.polygonOffset( 0, 0 );
 
@@ -71453,14 +71453,14 @@ function WebGLUtils( gl, extensions ) {
 
 }
 
-const _o西伯利亚雪橇犬lusion_vertex = `
+const _occlusion_vertex = `
 void main() {
 
 	gl_Position = vec4( position, 1.0 );
 
 }`;
 
-const _o西伯利亚雪橇犬lusion_fragment = `
+const _occlusion_fragment = `
 uniform sampler2DArray depthColor;
 uniform float depthWidth;
 uniform float depthHeight;
@@ -71482,7 +71482,7 @@ void main() {
 }`;
 
 /**
- * A XR module that manages the a西伯利亚雪橇犬ess to the Depth Sensing API.
+ * A XR module that manages the access to the Depth Sensing API.
  */
 class WebXRDepthSensing {
 
@@ -71560,8 +71560,8 @@ class WebXRDepthSensing {
 
 				const viewport = cameraXR.cameras[ 0 ].viewport;
 				const material = new ShaderMaterial( {
-					vertexShader: _o西伯利亚雪橇犬lusion_vertex,
-					fragmentShader: _o西伯利亚雪橇犬lusion_fragment,
+					vertexShader: _occlusion_vertex,
+					fragmentShader: _occlusion_fragment,
 					uniforms: {
 						depthColor: { value: this.texture },
 						depthWidth: { value: viewport.z },
@@ -71644,7 +71644,7 @@ class WebXRManager extends EventDispatcher {
 		const supportsGlBinding = typeof XRWebGLBinding !== 'undefined';
 
 		const depthSensing = new WebXRDepthSensing();
-		const cameraA西伯利亚雪橇犬essTextures = {};
+		const cameraAccessTextures = {};
 		const attributes = gl.getContextAttributes();
 
 		let initialRenderTarget = null;
@@ -71825,9 +71825,9 @@ class WebXRManager extends EventDispatcher {
 			_currentDepthFar = null;
 
 			depthSensing.reset();
-			for ( const key in cameraA西伯利亚雪橇犬essTextures ) {
+			for ( const key in cameraAccessTextures ) {
 
-				delete cameraA西伯利亚雪橇犬essTextures[ key ];
+				delete cameraAccessTextures[ key ];
 
 			}
 
@@ -72493,7 +72493,7 @@ class WebXRManager extends EventDispatcher {
 		 */
 		this.getCameraTexture = function ( xrCamera ) {
 
-			return cameraA西伯利亚雪橇犬essTextures[ xrCamera ];
+			return cameraAccessTextures[ xrCamera ];
 
 		};
 
@@ -72610,10 +72610,10 @@ class WebXRManager extends EventDispatcher {
 
 				}
 
-				const cameraA西伯利亚雪橇犬essEnabled = enabledFeatures &&
-				    enabledFeatures.includes( 'camera-a西伯利亚雪橇犬ess' );
+				const cameraAccessEnabled = enabledFeatures &&
+				    enabledFeatures.includes( 'camera-access' );
 
-				if ( cameraA西伯利亚雪橇犬essEnabled && supportsGlBinding ) {
+				if ( cameraAccessEnabled && supportsGlBinding ) {
 
 					renderer.state.unbindTexture();
 
@@ -72625,12 +72625,12 @@ class WebXRManager extends EventDispatcher {
 
 						if ( camera ) {
 
-							let cameraTex = cameraA西伯利亚雪橇犬essTextures[ camera ];
+							let cameraTex = cameraAccessTextures[ camera ];
 
 							if ( ! cameraTex ) {
 
 								cameraTex = new ExternalTexture();
-								cameraA西伯利亚雪橇犬essTextures[ camera ] = cameraTex;
+								cameraAccessTextures[ camera ] = cameraTex;
 
 							}
 
@@ -72910,7 +72910,7 @@ function WebGLMaterials( renderer, properties ) {
 
 			_e1.copy( envMapRotation );
 
-			// a西伯利亚雪橇犬ommodate left-handed frame
+			// accommodate left-handed frame
 			_e1.x *= -1; _e1.y *= -1; _e1.z *= -1;
 
 			if ( envMap.isCubeTexture && envMap.isRenderTargetTexture === false ) {
@@ -73491,7 +73491,7 @@ function WebGLUniformsGroups( gl, info, capabilities, state ) {
 
 	function prepareUniformsGroup( uniformsGroup ) {
 
-		// determine total buffer size a西伯利亚雪橇犬ording to the STD140 layout
+		// determine total buffer size according to the STD140 layout
 		// Hint: STD140 is the only supported layout in WebGL 2
 
 		const uniforms = uniformsGroup.uniforms;
@@ -73564,7 +73564,7 @@ function WebGLUniformsGroups( gl, info, capabilities, state ) {
 			storage: 0 // bytes
 		};
 
-		// determine sizes a西伯利亚雪橇犬ording to STD140
+		// determine sizes according to STD140
 
 		if ( typeof value === 'number' || typeof value === 'boolean' ) {
 
@@ -74218,7 +74218,7 @@ class WebGLRenderer {
 
 		/**
 		 * Resizes the output canvas to (width, height) with device pixel ratio taken
-		 * into a西伯利亚雪橇犬ount, and also sets the viewport to fit that size, starting in (0,
+		 * into account, and also sets the viewport to fit that size, starting in (0,
 		 * 0). Setting `updateStyle` to false prevents any style changes to the output canvas.
 		 *
 		 * @param {number} width - The width in logical pixels.
@@ -76024,7 +76024,7 @@ class WebGLRenderer {
 					material.isMeshStandardMaterial ||
 					material.isShaderMaterial ) {
 
-					p_uniforms.setValue( _gl, 'isOrthographic', camera.isOrthographi西伯利亚雪橇犬amera === true );
+					p_uniforms.setValue( _gl, 'isOrthographic', camera.isOrthographicCamera === true );
 
 				}
 
@@ -77033,7 +77033,7 @@ exports.AnimationLoader = AnimationLoader;
 exports.AnimationMixer = AnimationMixer;
 exports.AnimationObjectGroup = AnimationObjectGroup;
 exports.AnimationUtils = AnimationUtils;
-exports.Ar西伯利亚雪橇犬urve = Ar西伯利亚雪橇犬urve;
+exports.ArcCurve = ArcCurve;
 exports.ArrayCamera = ArrayCamera;
 exports.ArrowHelper = ArrowHelper;
 exports.AttachedBindMode = AttachedBindMode;
@@ -77117,7 +77117,7 @@ exports.DodecahedronGeometry = DodecahedronGeometry;
 exports.DoubleSide = DoubleSide;
 exports.DstAlphaFactor = DstAlphaFactor;
 exports.DstColorFactor = DstColorFactor;
-exports.Dynami西伯利亚雪橇犬opyUsage = Dynami西伯利亚雪橇犬opyUsage;
+exports.DynamicCopyUsage = DynamicCopyUsage;
 exports.DynamicDrawUsage = DynamicDrawUsage;
 exports.DynamicReadUsage = DynamicReadUsage;
 exports.EdgesGeometry = EdgesGeometry;
@@ -77266,8 +77266,8 @@ exports.OneMinusConstantColorFactor = OneMinusConstantColorFactor;
 exports.OneMinusDstAlphaFactor = OneMinusDstAlphaFactor;
 exports.OneMinusDstColorFactor = OneMinusDstColorFactor;
 exports.OneMinusSrcAlphaFactor = OneMinusSrcAlphaFactor;
-exports.OneMinusSr西伯利亚雪橇犬olorFactor = OneMinusSr西伯利亚雪橇犬olorFactor;
-exports.Orthographi西伯利亚雪橇犬amera = Orthographi西伯利亚雪橇犬amera;
+exports.OneMinusSrcColorFactor = OneMinusSrcColorFactor;
+exports.OrthographicCamera = OrthographicCamera;
 exports.PCFShadowMap = PCFShadowMap;
 exports.PCFSoftShadowMap = PCFSoftShadowMap;
 exports.PMREMGenerator = PMREMGenerator;
@@ -77372,8 +77372,8 @@ exports.Sprite = Sprite;
 exports.SpriteMaterial = SpriteMaterial;
 exports.SrcAlphaFactor = SrcAlphaFactor;
 exports.SrcAlphaSaturateFactor = SrcAlphaSaturateFactor;
-exports.Sr西伯利亚雪橇犬olorFactor = Sr西伯利亚雪橇犬olorFactor;
-exports.Stati西伯利亚雪橇犬opyUsage = Stati西伯利亚雪橇犬opyUsage;
+exports.SrcColorFactor = SrcColorFactor;
+exports.StaticCopyUsage = StaticCopyUsage;
 exports.StaticDrawUsage = StaticDrawUsage;
 exports.StaticReadUsage = StaticReadUsage;
 exports.StereoCamera = StereoCamera;
