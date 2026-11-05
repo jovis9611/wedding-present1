@@ -116,8 +116,8 @@ giftBox.addEventListener("click", () => {
   }, 700);
 });
 const RIDDLES = {
-  1: { name: "悟悟", question: "曾经我们一起上过的element class code后面的数字是什么？", answer: "098761256" },
-  0: {"name": "INFG", "question": "月老给新娘安排了一间「幸福婚姻办公室」，办公室门牌是四位数字。\n月老说：\n“门牌有四位数，第一位是最后一位的平方。”\n“中间两位数字相同。”\n“所有数字相加等于2。”\n“而且门牌号码倒过来读，还是同一个号码。”\n\n新娘问：“这是什么神仙办公室？连结婚都要考数学？”\n月老：“因为这间办公室，只收愿意相爱一辈子的夫妻。”\n\n问题：门牌号码是多少？", "answer": "1001"},
+  1: { name: "悟悟", question: "1+1=几？", answer: "！" },
+  0: {"name": "FX", "question": "月老给新娘安排了一间「幸福婚姻办公室」，办公室门牌是四位数字。\n月老说：\n“门牌有四位数，第一位是最后一位的平方。”\n“中间两位数字相同。”\n“所有数字相加等于2。”\n“而且门牌号码倒过来读，还是同一个号码。”\n\n新娘问：“这是什么神仙办公室？连结婚都要考数学？”\n月老：“因为这间办公室，只收愿意相爱一辈子的夫妻。”\n\n问题：门牌号码是多少？", "answer": "1001"},
   2: { name: "西伯利亚雪橇犬", question: "就是我们（cc，ivy，廖廖，cps，晓枫）的生日加起来的号码\n（只是月份和日期）", answer: "2886" },
   3: { name: "FAM", question: "有个人出生在千禧年前四年，生日月份是最后一个季度的中间月份，日期是最小的奇质数。\n\n如果把出生月份、日期，以及出生年份的个位数依次排列，会得到什么四位密码？", answer: "1136" },
   4: { name: "花生", question: "在这个庞大的坐标系里，\n我曾试图用微积分算尽宇宙的无限。\n直到遇见你，我才找到了“永远”的解——\n那是一个转身的距离，\n是一次横过来看像“B”的侧影，\n是再一次对视的心动，\n也是一场至死不渝的奔赴。", answer: "1314" }
@@ -150,10 +150,13 @@ treeGifts.forEach((button, i) => button.addEventListener("click", () => {
     riddlePanel.hidden = false; blessingDeck.hidden = true; backToTree.hidden = true;
     document.getElementById("riddleTitle").textContent = `来自${RIDDLES[i].name}的小谜题`;
     document.getElementById("riddleText").textContent = RIDDLES[i].question;
-    const digits = RIDDLES[i].answer.length;
+    const expected = RIDDLES[i].answer.normalize("NFKC");
+    const numeric = /^\d+$/.test(expected);
+    const digits = expected.length;
+    riddleAnswer.inputMode = numeric ? "numeric" : "text";
     riddleAnswer.maxLength = digits;
-    riddleAnswer.placeholder = digits + " 位数字";
-    document.querySelector('label[for="riddleAnswer"]').textContent = "输入 " + digits + " 位密码，打开这份留言";
+    riddleAnswer.placeholder = numeric ? digits + " 位数字" : "输入你的答案";
+    document.querySelector('label[for="riddleAnswer"]').textContent = numeric ? "输入 " + digits + " 位密码，打开这份留言" : "输入答案，打开这份留言";
     riddleAnswer.value = ""; riddleAnswer.removeAttribute("aria-invalid"); riddleError.textContent = "";
     blessingDialog.setAttribute("aria-label", `解锁${RIDDLES[i].name}的留言`);
     blessingDialog.showModal(); blessingDialog.scrollTop = 0;
@@ -166,8 +169,10 @@ document.getElementById("riddleForm").addEventListener("submit", event => {
   event.preventDefault();
   if (pendingGift === null || currentScene !== "scene-gift" || !blessingDialog.open) return;
   const value = riddleAnswer.value.normalize("NFKC").trim();
-  if (value !== RIDDLES[pendingGift].answer) {
-    riddleError.textContent = (/^\d+$/.test(value) && value.length === RIDDLES[pendingGift].answer.length) ? "还差一点点，再想想看 ♡" : "请输入 " + RIDDLES[pendingGift].answer.length + " 位数字哦。";
+  const expected = RIDDLES[pendingGift].answer.normalize("NFKC");
+  if (value !== expected) {
+    const numeric = /^\d+$/.test(expected);
+    riddleError.textContent = !value ? "先输入答案哦。" : numeric && (!/^\d+$/.test(value) || value.length !== expected.length) ? "请输入 " + expected.length + " 位数字哦。" : "还差一点点，再想想看 ♡";
     riddleAnswer.setAttribute("aria-invalid", "true"); riddleAnswer.focus(); riddleAnswer.select(); return;
   }
   const solvedGift = pendingGift;
